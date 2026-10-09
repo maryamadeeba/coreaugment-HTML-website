@@ -21,23 +21,6 @@ Explore the live website in action: [https://www.coreaugment.com](https://www.co
 
 ---
 
-## 🚀 Getting Started & Local Setup
-
-To run or modify a local version of this project on your machine, follow these steps:
-
-1. **Clone the repository:**
-   ```bash
-   git clone https://github.com/your-username/coreaugment-website.git
-   ```
-2. **Navigate into the project directory:**
-   ```bash
-   cd coreaugment-website
-   ```
-3. **Run the project:**
-   * Open `index.html` directly in your preferred web browser, or
-   * Use a local development server extension (such as Live Server in VS Code) for an optimal hot-reloading experience.
-
----
 
 ## 📁 Project Structure
 ```text
