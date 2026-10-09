@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frequently Asked Questions | CoreAugment</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+
+        /* Hero Image Layout */
+        .hero-faq-image {
+            width: 100%;
+            height: 100%;
+            max-height: 520px;
+            object-fit: contain;
+            display: block;
+            border-radius: 16px;
+            background: #fff;
+            padding: 10px;
+            box-sizing: border-box;
+            transition: transform 0.4s ease;
+        }
+
+        .hero-image-wrapper:hover .hero-faq-image {
+            transform: scale(1.03);
+        }
+
+        .faq-nav {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            justify-content: center;
+            margin-bottom: 3rem;
+            position: sticky;
+            top: 70px;
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(5px);
+            padding: 1rem 0;
+            z-index: 100;
+            border-bottom: 1px solid var(--color-border);
+        }
+
+        .faq-nav a {
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--color-charcoal);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            background-color: var(--color-bg-light);
+            border: 1px solid var(--color-border);
+            transition: all 0.2s ease;
+        }
+
+        .faq-nav a:hover, .faq-nav a.active {
+            background-color: var(--color-emerald);
+            color: #FFFFFF;
+            border-color: var(--color-emerald);
+        }
+
+        /* FAQ Accordion Styling */
+        .faq-category {
+            margin-bottom: 3.5rem;
+            scroll-margin-top: 140px;
+        }
+
+        .category-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--color-charcoal);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            border-bottom: 2px solid var(--color-emerald);
+            padding-bottom: 0.5rem;
+        }
+
+        .faq-accordion {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .faq-item {
+            background-color: #FFFFFF;
+            border: 1px solid var(--color-border);
+            border-radius: 8px;
+            overflow: hidden;
+            transition: border-color 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .faq-item:hover {
+            border-color: var(--color-emerald);
+        }
+
+        .faq-question {
+            width: 100%;
+            text-align: left;
+            padding: 1.25rem 1.5rem;
+            background: none;
+            border: none;
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: var(--color-charcoal);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            gap: 1rem;
+        }
+
+        .faq-question i {
+            color: var(--color-emerald);
+            transition: transform 0.3s ease;
+        }
+
+        .faq-item.open .faq-question i {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+            background-color: #FAFAFA;
+            color: var(--color-text-muted);
+            line-height: 1.6;
+            font-size: 0.95rem;
+            padding: 0 1.5rem;
+        }
+
+        .faq-item.open .faq-answer {
+            max-height: 500px;
+            padding: 0 1.5rem 1.25rem 1.5rem;
+        }
+
+        /* Policy Cards Styling */
+        .policy-section {
+            background-color: #FFFFFF;
+            border: 1px solid var(--color-border);
+            border-radius: 12px;
+            padding: 2.5rem;
+            margin-top: 3rem;
+        }
+
+        .policy-section h2 {
+            font-size: 1.8rem;
+            color: var(--color-charcoal);
+            margin-bottom: 1rem;
+        }
+
+        .policy-section p, .policy-section ul {
+            color: var(--color-text-muted);
+            line-height: 1.7;
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+        }
+
+        .policy-section ul {
+            padding-left: 1.25rem;
+        }
+
+        /* Smooth Anchor Scroll */
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- TOP ANNOUNCEMENT BAR -->
+    <div class="top-bar">
+        <span>Dedicated professionals. Your direction. Our workforce support.</span>
+    </div>
+
+    <!-- MAIN HEADER & NAVIGATION -->
+    <header class="header">
+        <div class="container nav-container">
+            <a href="index.html" class="logo-link">
+                <img src="logo.png" alt="CoreAugment Logo" class="logo-img" onerror="this.onerror=null; this.src='https://via.placeholder.com/150x50/1F2937/10B981?text=CoreAugment';">
+            </a>
+
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html" class="active">Home</a></li>
+
+                    <li>
+                        <a href="javascript:void(0);">CoreAugment <i class="fas fa-chevron-down dropdown-icon"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="why-coreaugment.html">Why CoreAugment</a></li>
+                            <li><a href="why-we-exist.html">Why We Exist</a></li>
+                            <li><a href="success-stories.html">Success Stories</a></li>
+                            <li><a href="leadership.html">Leadership Team</a></li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <a href="javascript:void(0);">Investment <i class="fas fa-chevron-down dropdown-icon"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="investment.html">Investment</a></li>
+                            <li><a href="build-your-workforce.html">All Solutions</a></li>
+                            <li><a href="build-your-workforce.html">Build Your Workforce</a></li>
+                            <li><a href="build-your-workforce.html#hire-by-role">Hire by Role</a></li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <a href="javascript:void(0);">How We Work <i class="fas fa-chevron-down dropdown-icon"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="how-we-work.html">How We Work</a></li>
+                            <li><a href="how-we-work.html#our-process">Our Process</a></li>
+                            <li><a href="how-we-work.html#workforce-calculator">Workforce Cost Calculator</a></li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <a href="javascript:void(0);">Contact Us <i class="fas fa-chevron-down dropdown-icon"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="book-a-discovery-call.html">Contact Us</a></li>
+                            <li><a href="faq.html">FAQs</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+            <div class="header-cta">
+                <a href="book-a-discovery-call.html" class="btn btn-primary">Book a Call</a>
+            </div>
+
+            <button type="button" class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false" onclick="toggleMobileNav(this)">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <main>
+
+        <!-- HERO SECTION -->
+        <section class="hero">
+            <div class="container hero-container">
+                <div class="hero-content">
+                    <span class="hero-badge">Clear Answers & Transparency</span>
+                    <h1>Questions Answered. Confident Decisions Made.</h1>
+                    <p>Everything you need to know before building your team with CoreAugment.</p>
+                    <div class="hero-buttons">
+                        <a href="book-a-discovery-call.html" class="btn btn-primary">Schedule Your Discovery Call</a>
+                    </div>
+                </div>
+                <div class="hero-image-wrapper">
+                    <img src="faq.jpeg" alt="FAQ Badge and Help Illustration" class="hero-faq-image">
+                </div>
+            </div>
+        </section>
+
+        <!-- CATEGORY NAVIGATION TABS -->
+        <div class="container">
+            <nav class="faq-nav">
+                <a href="#starting-your-journey">Starting Your Journey</a>
+                <a href="#finding-professionals">Finding Talent</a>
+                <a href="#after-team-hired">Post-Hiring & HR</a>
+                <a href="#pricing">Pricing</a>
+                <a href="#our-approach">Our Approach</a>
+                <a href="#working-together">Working Together</a>
+                <a href="#privacy-policy">Privacy Policy</a>
+                <a href="#terms-of-service">Terms of Service</a>
+            </nav>
+        </div>
+
+        <!-- MAIN FAQ CONTAINER -->
+        <section class="section-padding" style="padding-top: 0;">
+            <div class="container" style="max-width: 900px;">
+
+                <!-- 1. STARTING YOUR JOURNEY -->
+                <div id="starting-your-journey" class="faq-category">
+                    <h2 class="category-title"><i class="fas fa-rocket"></i> Starting Your Journey</h2>
+                    <div class="faq-accordion">
+                        <div class="faq-item">
+                            <button class="faq-question">How do I get started with CoreAugment? <i class="fas fa-chevron-down"></i></button>
+                            <div class="faq-answer">Getting started is simple. Schedule an initial discovery call with our team to discuss your operational needs, required roles, experience level preferences, and system workflows. We take care of sourcing, screening, compliance, and onboarding from there.</div>
+                        </div>
+                        <div class="faq-item">
+                            <button class="faq-question">What happens during the discovery call? <i class="fas fa-chevron-down"></i></button>
+                            <div class="faq-answer">During the discovery call, we dive deep into your company's operational bottlenecks, timezone preferences, tool requirements, and company culture. This enables us to formulate a tailored custom workforce plan and identify exact talent criteria.</div>
+                        </div>
+                        <div class="faq-item">
+                            <button class="faq-question">How quickly can we begin? <i class="fas fa-chevron-down"></i></button>
+                            <div class="faq-answer">Depending on your specific role requirements and experience tier, candidate shortlists are typically presented within 1 to 2 weeks. Once you select your professional, onboarding can begin immediately.</div>
+                        </div>
+                        <div class="faq-item">
+                            <button class="faq-question">Do you work with businesses of all sizes? <i class="fas fa-chevron-down"></i></button>
+                            <div class="faq-answer">Yes! We partner with high-growth startups, mid-market companies, and established enterprises that require dedicated, full-time remote talent with full infrastructure and compliance support.</div>
+                        </div>
+                        <div class="faq-item">
+                            <button class="faq-question">Can I start with just one professional? <i class="fas fa-chevron-down"></i></button>
+                            <div class="faq-answer">Absolutely. Many of our clients start with a single dedicated role - such as an Executive Assistant, Accountant, or Software Developer - and scale up to multi-person functional pods over time.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2. FINDING THE RIGHT PROFESSIONALS -->
+                <div id="finding-professionals" class="faq-category">
+                    <h2 class="category-title"><i class="fas fa-user-check"></i> Finding the Right Professionals</h2>
+                    <div class="faq-accordion">
+                        <div class="faq-item">
+                            <button class="faq-question">Do you already have candidates available? <i class="fas fa-chevron-down"></i></button>
+                            <div class="faq-answer">While we maintain a vetted talent pipeline, we do not force static bench candidates onto your business. Instead, we initiate targeted recruitment tailored to your exact technical, operational, and cultural parameters.</div>
+                        </div>
+                        <div class="faq-item">
+                            <button class="faq-question">How do you find candidates? <i class="fas fa-chevron-down"></i></button>
+                            <div class="faq-answer">We leverage proprietary global sourcing channels, multi-stage skill assessments, domain-specific evaluations, and extensive professional networks to source top-tier talent.</div>
+                        </div>
+                        <div class="faq-item">
+                            <button class="faq-question">How do you evaluate professionals? <i class="fas fa-chevron-down"></i></button>
+                            <div class="faq-answer">Our evaluation process includes background verification, English language proficiency testing, practical role-based skills tests, technical assessments, and structured behavioral interviews.</div>
+                        </div>
+                        <div class="faq-item">
+                            <button class="faq-question">Can I interview every shortlisted candidate? <i class="fas fa-chevron-down"></i></button>
+                            <div class="faq-answer">Yes. After CoreAugment completes rigorous preliminary vetting, you interview the final top candidates to evaluate fit with your team and culture.</div>
+                        </div>
+                        <div class="faq-item">
+                            <button class="faq-question">Who makes the final hiring decision? <i class="fas fa-chevron-down"></i></button>
+                            <div class="faq-answer">You do. You retain 100% final approval authority over every professional selected to join your team.</div>
+                        </div>
+                        <div class="faq-item">
+                            <button class="faq-question">What if none of the candidates are suitable? <i class="fas fa-chevron-down"></i></button>
+                            <div class="faq-answer">If none of the initial shortlisted candidates meet your expectations, we refine our search criteria based on your feedback and present a fresh set of candidates at no extra charge.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3. AFTER YOUR TEAM IS HIRED -->
+                <div id="after-team-hired" class="faq-category">
+                    <h2 class="category-title"><i class="fas fa-briefcase"></i> After Your Team Is Hired</h2>
+                    <div class="faq-accordion">
+                        <div class="faq-item">
+                            <button class="faq-question">Who manages HR? <i class="fas fa-chevron-down"></i></button>
+                            <div class="faq-answer">CoreAugment handles all operational HR duties - including contracts, benefits administration, holiday tracking, and ongoing talent support - allowing you to focus strictly on task direction and output.</div>
+                        </div>
+                        <div class="faq-item">
+                            <button class="faq-question">Who processes payroll? <i class="fas fa-chevron-down"></i></button>
+                            <div class="faq-answer">CoreAugment manages complete end-to-end international payroll, local currency conversion, and tax disbursements. You receive one simple, predictable monthly invoice.</div>
+                        </div>
+                        <div class="faq-item">
+                            <button class="faq-question">Who handles compliance? <i class="fas fa-chevron-down"></i></button>
+                            <div class="faq-answer">We ensure total global labor law compliance, international employment contracting, local tax withholdings, and operational risk mitigation.</div>
+                        </div>
+                        <div class="faq-item">
+                            <button class="faq-question">Who monitors attendance? <i class="fas fa-chevron-down"></i></button>
+                            <div class="faq-answer">CoreAugment tracks attendance, leave requests, and schedule adherence aligned with your business hours, while you oversee daily task completion.</div>
+                        </div>
+                        <div class="faq-item">
+                            <button class="faq-question">Who supports employee engagement? <i class="fas fa-chevron-down"></i></button>
+                            <div class="faq-answer">We provide ongoing employee experience support, performance check-ins, local perks, and professional growth initiatives to keep retention high and turnover near zero.</div>
+                        </div>
+                        <div class="faq-item">
+                            <button class="faq-question">Can I expand my team later? <i class="fas fa-chevron-down"></i></button>
+                            <div class="faq-answer">Yes! You can scale your team seamlessly as your company grows - adding complementary roles or building out full functional pods whenever needed.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 4. PRICING -->
+                <div id="pricing" class="faq-category">
+                    <h2 class="category-title"><i class="fas fa-calculator"></i> Pricing</h2>
+                    <div class="faq-accordion">
+                        <div class="faq-item">
+                            <button class="faq-question">How is pricing determined? <i class="fas fa-chevron-down"></i></button>
+                            <div class="faq-answer">Pricing is based on the specific role, experience level tier (Associate, Professional, Senior, Executive Specialist), and required technical skills. It is billed as a flat, predictable monthly fee.</div>
+                        </div>
+                        <div class="faq-item">
+                            <button class="faq-question">What's included in the monthly investment? <i class="fas fa-chevron-down"></i></button>
+                            <div class="faq-answer">Your monthly investment covers full-time salary, HR support, local payroll and tax compliance, employee benefits, ongoing retention management, and dedicated account oversight.</div>
+                        </div>
+                        <div class="faq-item">
+                            <button class="faq-question">Are there recruitment fees? <i class="fas fa-chevron-down"></i></button>
+                            <div class="faq-answer">No. Unlike headhunters or staffing agencies that charge hefty placement fees (often 15–25% of annual salary), CoreAugment operates on transparent monthly pricing without upfront placement penalties.</div>
+                        </div>
+                        <div class="faq-item">
+                            <button class="faq-question">Are there hidden costs? <i class="fas fa-chevron-down"></i></button>
+                            <div class="faq-answer">Never. Our pricing model is completely transparent with no hidden admin fees, surprise tax surcharges, or unexpected expenses.</div>
+                        </div>
+                        <div class="faq-item">
+                            <button class="faq-question">Can I upgrade experience levels later? <i class="fas fa-chevron-down"></i></button>
+                            <div class="faq-answer">Yes, as your needs evolve, we can assist in transitioning team members into higher tier responsibilities or sourcing senior specialists to lead growing pods.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 5. OUR APPROACH -->
+                <div id="our-approach" class="faq-category">
+                    <h2 class="category-title"><i class="fas fa-shield-alt"></i> Our Approach</h2>
+                    <div class="faq-accordion">
+                        <div class="faq-item">
+                            <button class="faq-question">Why don't you promise immediate candidate availability? <i class="fas fa-chevron-down"></i></button>
+                            <div class="faq-answer">Because true operational quality requires alignment. Off-the-shelf "instant" talent rarely fits specific workflows. Sourcing based on your exact specifications ensures long-term success and eliminates turnover.</div>
+                        </div>
+                        <div class="faq-item">
+                            <button class="faq-question">What does Right Fit First mean? <i class="fas fa-chevron-down"></i></button>
+                            <div class="faq-answer">Right Fit First is our guiding operational philosophy: prioritizing long-term alignment, technical capability, and cultural fit over quick, subpar placements.</div>
+                        </div>
+                        <div class="faq-item">
+                            <button class="faq-question">How are you different from recruitment agencies? <i class="fas fa-chevron-down"></i></button>
+                            <div class="faq-answer">Recruitment agencies hand off candidate resumes and walk away. CoreAugment remains your long-term partner, providing global payroll, HR management, compliance, and operational support indefinitely.</div>
+                        </div>
+                        <div class="faq-item">
+                            <button class="faq-question">How are you different from outsourcing companies? <i class="fas fa-chevron-down"></i></button>
+                            <div class="faq-answer">Traditional BPOs use rigid, black-box project managers and ticket systems. CoreAugment provides dedicated talent who integrate directly into your tools (Slack, Teams, Jira), work your schedule, and follow your standards.</div>
+                        </div>
+                        <div class="faq-item">
+                            <button class="faq-question">How are you different from freelancers? <i class="fas fa-chevron-down"></i></button>
+                            <div class="faq-answer">Freelancers often handle multiple clients, offer unpredictable availability, and carry no compliance infrastructure. CoreAugment talent works 100% full-time, exclusively dedicated to your company.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 6. WORKING TOGETHER -->
+                <div id="working-together" class="faq-category">
+                    <h2 class="category-title"><i class="fas fa-handshake"></i> Working Together</h2>
+                    <div class="faq-accordion">
+                        <div class="faq-item">
+                            <button class="faq-question">Who will be my point of contact? <i class="fas fa-chevron-down"></i></button>
+                            <div class="faq-answer">You will be assigned a dedicated CoreAugment Account Lead who oversees talent onboarding, performance check-ins, payroll billing, and operational coordination.</div>
+                        </div>
+                        <div class="faq-item">
+                            <button class="faq-question">How often do we communicate? <i class="fas fa-chevron-down"></i></button>
+                            <div class="faq-answer">You collaborate directly with your hired team daily. CoreAugment conducts regular monthly or quarterly account check-ins to ensure client and employee satisfaction.</div>
+                        </div>
+                        <div class="faq-item">
+                            <button class="faq-question">How do you measure success? <i class="fas fa-chevron-down"></i></button>
+                            <div class="faq-answer">Success is measured through retention rate, operational output, client satisfaction scores, and team feedback.</div>
+                        </div>
+                        <div class="faq-item">
+                            <button class="faq-question">What happens if a professional resigns? <i class="fas fa-chevron-down"></i></button>
+                            <div class="faq-answer">In the rare event of a resignation, CoreAugment rapidly initiates priority replacement recruitment and manages knowledge transfer protocols at zero additional cost to your business.</div>
+                        </div>
+                        <div class="faq-item">
+                            <button class="faq-question">How do you ensure long term retention? <i class="fas fa-chevron-down"></i></button>
+                            <div class="faq-answer">We maintain high retention by offering competitive global salaries, local health benefits, career growth planning, and dedicated local HR engagement.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PRIVACY POLICY SECTION -->
+                <div id="privacy-policy" class="policy-section">
+                    <h2>Privacy Policy</h2>
+                    <p>At CoreAugment, accessible from coreaugment.com, protecting your privacy is one of our top priorities. This Privacy Policy document outlines the types of information collected and recorded by CoreAugment and how we utilize it.</p>
+                    
+                    <h3 style="font-size:1.2rem; color:var(--color-charcoal); margin-top:1.5rem; margin-bottom:0.5rem;">Information Collection & Usage</h3>
+                    <p>When you contact us, book a discovery call, or utilize our global talent infrastructure services, we may collect personal contact details (such as name, email address, phone number), corporate information, and technical role requirements.</p>
+
+                    <h3 style="font-size:1.2rem; color:var(--color-charcoal); margin-top:1.5rem; margin-bottom:0.5rem;">Data Protection & Security</h3>
+                    <p>We implement strict technical and organizational security measures to protect client and talent data against unauthorized access, disclosure, or alteration. CoreAugment never sells, rents, or monetizes personal or business data to third-party advertisers.</p>
+                </div>
+
+                <!-- TERMS OF SERVICE SECTION -->
+                <div id="terms-of-service" class="policy-section">
+                    <h2>Terms of Service</h2>
+                    <p>By accessing or utilizing the services provided by CoreAugment, you agree to comply with and be bound by the following Terms of Service.</p>
+                    
+                    <h3 style="font-size:1.2rem; color:var(--color-charcoal); margin-top:1.5rem; margin-bottom:0.5rem;">Service Agreement & Execution</h3>
+                    <p>CoreAugment provides managed remote workforce solutions, facilitating the recruitment, international HR management, payroll, and compliance infrastructure for dedicated team members. Direct operational task assignment and workflow management are directed by the client.</p>
+
+                    <h3 style="font-size:1.2rem; color:var(--color-charcoal); margin-top:1.5rem; margin-bottom:0.5rem;">Intellectual Property</h3>
+                    <p>All intellectual property, work product, source code, designs, and deliverables created by CoreAugment professionals during their engagement with a client belong 100% exclusively to the client company.</p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- FINAL CTA SECTION -->
+        <section class="banner-dark text-center" style="padding: 4.5rem 1.5rem;">
+            <div class="container" style="max-width: 800px;">
+                <h2 style="font-size: 2.5rem; font-weight: 800; color: #FFFFFF; margin-bottom: 1rem;">
+                    Let's Talk.
+                </h2>
+                <p style="color: #D1D5DB; font-size: 1.15rem; margin-bottom: 2rem; line-height: 1.6;">
+                    Every business is different. If your question isn't covered here, we'd be happy to discuss your specific requirements.
+                </p>
+                <a href="book-a-discovery-call.html" class="btn btn-primary" style="font-size: 1.1rem; padding: 0.9rem 2.2rem;">Book a Discovery Call</a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- WEBSITE FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="grid grid-4">
+                <div>
+                    <h4 class="footer-title">BUILD</h4>
+                    <ul class="footer-links">
+                        <li><a href="build-your-workforce.html">Build Your Workforce</a></li>
+                        <li><a href="how-we-work.html">How We Work</a></li>
+                        <li><a href="investment.html">Investment</a></li>
+                        <li><a href="build-your-workforce.html#hire-by-role">Hire by Role</a></li>
+                        <li><a href="build-your-workforce.html#by-function">Build by Function</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="footer-title">LEARN</h4>
+                    <ul class="footer-links">
+                        <li><a href="faq.html">FAQs</a></li>
+                        <li><a href="book-a-discovery-call.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="footer-title">COMPANY</h4>
+                    <ul class="footer-links">
+                        <li><a href="why-coreaugment.html">Why CoreAugment</a></li>
+                        <li><a href="why-we-exist.html">Why We Exist</a></li>
+                        <li><a href="leadership.html">Leadership</a></li>
+                        <li><a href="success-stories.html">Success Stories</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="footer-title">CONNECT</h4>
+                    <ul class="footer-links">
+                        <li><a href="book-a-discovery-call.html" style="color: var(--color-emerald); font-weight: 700;">Book a Discovery Call</a></li>
+                        <li><a href="book-a-discovery-call.html#booking-form">Email Us</a></li>
+                        <li><a href="https://www.linkedin.com/company/coreaugment/posts/?feedView=all" target="_blank">LinkedIn</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div>
+                    &copy; CoreAugment 2026. All rights reserved. Built by operators for growing businesses.
+                </div>
+                <div style="display: flex; gap: 1.5rem;">
+                    <a href="#privacy-policy">Privacy Policy</a>
+                    <a href="#terms-of-service">Terms</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- INTERACTIVE ACCORDION SCRIPT -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqQuestions = document.querySelectorAll('.faq-question');
+
+            faqQuestions.forEach(question => {
+                question.addEventListener('click', () => {
+                    const faqItem = question.parentElement;
+                    const isOpen = faqItem.classList.contains('open');
+
+                    // Close all other open items for a clean accordion effect
+                    document.querySelectorAll('.faq-item.open').forEach(item => {
+                        if (item !== faqItem) {
+                            item.classList.remove('open');
+                        }
+                    });
+
+                    // Toggle current item
+                    if (isOpen) {
+                        faqItem.classList.remove('open');
+                    } else {
+                        faqItem.classList.add('open');
+                    }
+                });
+            });
+        });
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>

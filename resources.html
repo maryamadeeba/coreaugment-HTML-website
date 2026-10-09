@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resources for Better Workforce Decisions | CoreAugment</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+
+        /* CARD GRID STYLES */
+        .resources-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            margin-top: 2.5rem;
+        }
+
+        .resource-card {
+            background-color: #FFFFFF;
+            border: 1px solid var(--color-border, #E5E7EB);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .resource-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
+        }
+
+        .resource-img-wrapper {
+            width: 100%;
+            height: 200px;
+            overflow: hidden;
+            background-color: #1F2937;
+            position: relative;
+        }
+
+        .resource-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .resource-card:hover .resource-img {
+            transform: scale(1.05);
+        }
+
+        .resource-body {
+            padding: 1.75rem;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .resource-icon {
+            width: 42px;
+            height: 42px;
+            border-radius: 8px;
+            background-color: rgba(16, 185, 129, 0.1);
+            color: var(--color-emerald, #10B981);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+
+        .resource-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--color-charcoal, #1F2937);
+            margin: 0 0 0.5rem 0;
+        }
+
+        .resource-desc {
+            color: #6B7280;
+            font-size: 0.9rem;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+            flex-grow: 1;
+        }
+
+        .resource-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--color-emerald, #10B981);
+            font-weight: 700;
+            font-size: 0.9rem;
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .resource-link:hover {
+            color: #059669;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- TOP BAR -->
+    <div class="top-bar">
+        <span>Dedicated professionals. Your direction. Our workforce support.</span>
+    </div>
+
+    <!-- MAIN HEADER & NAVIGATION -->
+    <header class="header">
+        <div class="container nav-container">
+            <a href="index.html" class="logo-link">
+                <img src="logo.png" alt="CoreAugment Logo" class="logo-img" onerror="this.onerror=null; this.src='https://via.placeholder.com/150x50/1F2937/10B981?text=CoreAugment';">
+            </a>
+
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html" class="active">Home</a></li>
+
+                    <li>
+                        <a href="javascript:void(0);">CoreAugment <i class="fas fa-chevron-down dropdown-icon"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="why-coreaugment.html">Why CoreAugment</a></li>
+                            <li><a href="why-we-exist.html">Why We Exist</a></li>
+                            <li><a href="success-stories.html">Success Stories</a></li>
+                            <li><a href="leadership.html">Leadership Team</a></li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <a href="javascript:void(0);">Investment <i class="fas fa-chevron-down dropdown-icon"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="investment.html">Investment</a></li>
+                            <li><a href="build-your-workforce.html">All Solutions</a></li>
+                            <li><a href="build-your-workforce.html">Build Your Workforce</a></li>
+                            <li><a href="build-your-workforce.html#hire-by-role">Hire by Role</a></li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <a href="javascript:void(0);">How We Work <i class="fas fa-chevron-down dropdown-icon"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="how-we-work.html">How We Work</a></li>
+                            <li><a href="how-we-work.html#our-process">Our Process</a></li>
+                            <li><a href="how-we-work.html#workforce-calculator">Workforce Cost Calculator</a></li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <a href="javascript:void(0);">Contact Us <i class="fas fa-chevron-down dropdown-icon"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="book-a-discovery-call.html">Contact Us</a></li>
+                            <li><a href="faq.html">FAQs</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+            <div class="header-cta">
+                <a href="book-a-discovery-call.html" class="btn btn-primary">Book a Call</a>
+            </div>
+
+            <button type="button" class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false" onclick="toggleMobileNav(this)">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <!-- HERO SECTION -->
+        <section class="banner-dark text-center" style="padding: 5rem 1.5rem;">
+            <div class="container" style="max-width: 850px;">
+                <span style="color: var(--color-emerald, #10B981); font-weight: 700; text-transform: uppercase; font-size: 0.85rem; letter-spacing: 0.08em;">CoreAugment Knowledge Hub</span>
+                <h1 style="font-size: 3rem; font-weight: 800; margin: 0.75rem 0 1.25rem 0; line-height: 1.2;">Resources for Better Workforce Decisions</h1>
+                <p style="color: #D1D5DB; font-size: 1.2rem; line-height: 1.6;">
+                    Practical guides, tools, checklists, and frameworks to help you build stronger teams.
+                </p>
+            </div>
+        </section>
+
+        <!-- MAIN RESOURCES SECTION -->
+        <section class="section-padding" style="background-color: var(--color-bg-light, #F9FAFB); padding: 4rem 1.5rem;">
+            <div class="container">
+                
+                <div class="resources-grid">
+
+                    <!-- RESOURCE 1 -->
+                    <div class="resource-card">
+                        <div class="resource-img-wrapper">
+                            <img src="image7.jpeg" alt="Business Profile & Strategy" class="resource-img" onerror="this.onerror=null; this.src='https://via.placeholder.com/400x200/1F2937/10B981?text=Business+Profile';">
+                        </div>
+                        <div class="resource-body">
+                            <div class="resource-icon"><i class="fas fa-id-card"></i></div>
+                            <h3 class="resource-title">Business Profile</h3>
+                            <p class="resource-desc">Comprehensive overview of CoreAugment's dedicated team model, global talent reach, and infrastructure support.</p>
+                            <a href="book-a-discovery-call.html" class="resource-link">Download Profile PDF <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+
+                    <!-- RESOURCE 2 -->
+                    <div class="resource-card">
+                        <div class="resource-img-wrapper">
+                            <img src="image1.jpeg" alt="Workforce Capability Statement" class="resource-img" onerror="this.onerror=null; this.src='https://via.placeholder.com/400x200/1F2937/10B981?text=Capability+Statement';">
+                        </div>
+                        <div class="resource-body">
+                            <div class="resource-icon"><i class="fas fa-file-contract"></i></div>
+                            <h3 class="resource-title">Workforce Capability Statement</h3>
+                            <p class="resource-desc">Detailed breakdown of specialized skill domains, vetting criteria, security compliance, and SLA standards.</p>
+                            <a href="book-a-discovery-call.html" class="resource-link">View Statement <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+
+                    <!-- RESOURCE 3 -->
+                    <div class="resource-card">
+                        <div class="resource-img-wrapper">
+                            <img src="image14.jpeg" alt="Remote Hiring Guide" class="resource-img" onerror="this.onerror=null; this.src='https://via.placeholder.com/400x200/1F2937/10B981?text=Remote+Hiring+Guide';">
+                        </div>
+                        <div class="resource-body">
+                            <div class="resource-icon"><i class="fas fa-passport"></i></div>
+                            <h3 class="resource-title">Remote Hiring Guide</h3>
+                            <p class="resource-desc">A step-by-step operational manual for identifying, evaluating, and hiring high-performing global talent.</p>
+                            <a href="guides.html" class="resource-link">Read Guide <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+
+                    <!-- RESOURCE 4 -->
+                    <div class="resource-card">
+                        <div class="resource-img-wrapper">
+                            <img src="image2.jpeg" alt="Interview Toolkit" class="resource-img" onerror="this.onerror=null; this.src='https://via.placeholder.com/400x200/1F2937/10B981?text=Interview+Toolkit';">
+                        </div>
+                        <div class="resource-body">
+                            <div class="resource-icon"><i class="fas fa-user-check"></i></div>
+                            <h3 class="resource-title">Interview Toolkit</h3>
+                            <p class="resource-desc">Role-specific questioning frameworks and evaluation rubrics designed to benchmark technical ability and team fit.</p>
+                            <a href="guides.html" class="resource-link">Access Toolkit <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+
+                    <!-- RESOURCE 5 -->
+                    <div class="resource-card">
+                        <div class="resource-img-wrapper">
+                            <img src="image22.jpeg" alt="Remote Onboarding Guide" class="resource-img" onerror="this.onerror=null; this.src='https://via.placeholder.com/400x200/1F2937/10B981?text=Remote+Onboarding';">
+                        </div>
+                        <div class="resource-body">
+                            <div class="resource-icon"><i class="fas fa-plane-arrival"></i></div>
+                            <h3 class="resource-title">Remote Onboarding Guide</h3>
+                            <p class="resource-desc">Framework for integrating new remote personnel smoothly into your existing tools, workflows, and culture within 14 days.</p>
+                            <a href="guides.html" class="resource-link">Read Guide <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+
+                    <!-- RESOURCE 6 -->
+                    <div class="resource-card">
+                        <div class="resource-img-wrapper">
+                            <img src="image3.jpeg" alt="Workforce Planning Guide" class="resource-img" onerror="this.onerror=null; this.src='https://via.placeholder.com/400x200/1F2937/10B981?text=Workforce+Planning';">
+                        </div>
+                        <div class="resource-body">
+                            <div class="resource-icon"><i class="fas fa-sitemap"></i></div>
+                            <h3 class="resource-title">Workforce Planning Guide</h3>
+                            <p class="resource-desc">Strategic planning tools to forecast headcount requirements, balance team seniority, and manage human capital budgets.</p>
+                            <a href="guides.html" class="resource-link">Explore Framework <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+
+                    <!-- RESOURCE 7 -->
+                    <div class="resource-card">
+                        <div class="resource-img-wrapper">
+                            <img src="image4.jpeg" alt="Team Expansion Playbook" class="resource-img" onerror="this.onerror=null; this.src='https://via.placeholder.com/400x200/1F2937/10B981?text=Team+Expansion';">
+                        </div>
+                        <div class="resource-body">
+                            <div class="resource-icon"><i class="fas fa-chart-line"></i></div>
+                            <h3 class="resource-title">Team Expansion Playbook</h3>
+                            <p class="resource-desc">Practical blueprint for scaling operational pods from 1 to 20+ seats without sacrificing quality or management control.</p>
+                            <a href="how-we-work.html" class="resource-link">View Playbook <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+
+                    <!-- RESOURCE 8 -->
+                    <div class="resource-card">
+                        <div class="resource-img-wrapper">
+                            <img src="image5.jpeg" alt="Hiring Checklists" class="resource-img" onerror="this.onerror=null; this.src='https://via.placeholder.com/400x200/1F2937/10B981?text=Hiring+Checklists';">
+                        </div>
+                        <div class="resource-body">
+                            <div class="resource-icon"><i class="fas fa-tasks"></i></div>
+                            <h3 class="resource-title">Hiring Checklists</h3>
+                            <p class="resource-desc">Ready-to-use verification checklists for security clearance, system permissions, and operational readiness before Day 1.</p>
+                            <a href="guides.html" class="resource-link">Get Checklists <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+
+                    <!-- RESOURCE 9 -->
+                    <div class="resource-card">
+                        <div class="resource-img-wrapper">
+                            <img src="image6.jpeg" alt="Interview Scorecards" class="resource-img" onerror="this.onerror=null; this.src='https://via.placeholder.com/400x200/1F2937/10B981?text=Interview+Scorecards';">
+                        </div>
+                        <div class="resource-body">
+                            <div class="resource-icon"><i class="fas fa-poll-h"></i></div>
+                            <h3 class="resource-title">Interview Scorecards</h3>
+                            <p class="resource-desc">Standardized objective scoring templates to eliminate hiring bias and accurately compare candidate performance.</p>
+                            <a href="guides.html" class="resource-link">Download Scorecards <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+
+                    <!-- RESOURCE 10 -->
+                    <div class="resource-card">
+                        <div class="resource-img-wrapper">
+                            <img src="image8.jpeg" alt="Workforce Templates" class="resource-img" onerror="this.onerror=null; this.src='https://via.placeholder.com/400x200/1F2937/10B981?text=Workforce+Templates';">
+                        </div>
+                        <div class="resource-body">
+                            <div class="resource-icon"><i class="fas fa-copy"></i></div>
+                            <h3 class="resource-title">Workforce Templates</h3>
+                            <p class="resource-desc">Downloadable SOP templates, daily update logs, and communication guidelines for high-performing remote teams.</p>
+                            <a href="guides.html" class="resource-link">Access Templates <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- FINAL CTA SECTION -->
+        <section class="banner-dark text-center" style="padding: 5rem 1.5rem; background-color: var(--color-charcoal, #1F2937); border-top: 1px solid #374151;">
+            <div class="container" style="max-width: 800px;">
+                <h2 style="font-size: 2.5rem; font-weight: 800; color: #FFFFFF; margin-bottom: 1rem;">Want a Workforce Built Around Your Business?</h2>
+                <p style="color: #D1D5DB; font-size: 1.15rem; margin-bottom: 2rem; line-height: 1.6;">
+                    Connect with our leadership team to design a customized global team structure tailored to your exact operational workflows.
+                </p>
+                <a href="book-a-discovery-call.html" class="btn btn-primary" style="font-size: 1.05rem; padding: 0.9rem 2.25rem;">Talk to CoreAugment</a>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="grid grid-4">
+                <div>
+                    <h4 class="footer-title">BUILD</h4>
+                    <ul class="footer-links">
+                        <li><a href="build-your-workforce.html">Build Your Workforce</a></li>
+                        <li><a href="how-we-work.html">How We Work</a></li>
+                        <li><a href="investment.html">Investment</a></li>
+                        <li><a href="build-your-workforce.html#hire-by-role">Hire by Role</a></li>
+                        <li><a href="build-your-workforce.html#by-function">Build by Function</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="footer-title">LEARN</h4>
+                    <ul class="footer-links">
+                        <li><a href="faq.html">FAQs</a></li>
+                        <li><a href="book-a-discovery-call.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="footer-title">COMPANY</h4>
+                    <ul class="footer-links">
+                        <li><a href="why-coreaugment.html">Why CoreAugment</a></li>
+                        <li><a href="why-we-exist.html">Why We Exist</a></li>
+                        <li><a href="leadership.html">Leadership</a></li>
+                        <li><a href="success-stories.html">Success Stories</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="footer-title">CONNECT</h4>
+                    <ul class="footer-links">
+                        <li><a href="book-a-discovery-call.html" style="color: var(--color-emerald, #10B981); font-weight: 700;">Book a Discovery Call</a></li>
+                        <li><a href="book-a-discovery-call.html#booking-form">Email Us</a></li>
+                        <li><a href="https://www.linkedin.com/company/coreaugment/posts/?feedView=all" target="_blank">LinkedIn</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div>
+                    &copy; CoreAugment 2026. All rights reserved. Built by operators for growing businesses.
+                </div>
+                <div style="display: flex; gap: 1.5rem;">
+                    <a href="faq.html#privacy-policy">Privacy Policy</a>
+                    <a href="faq.html#terms-of-service">Terms</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

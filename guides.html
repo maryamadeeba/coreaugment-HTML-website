@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Workforce Guides & Free Interactive Tools | CoreAugment</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+
+        /* TOOL & SPOTLIGHT GRID CARDS */
+        .tool-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .interactive-tool-card {
+            background-color: #FFFFFF;
+            border: 1px solid var(--color-border, #E5E7EB);
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .interactive-tool-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
+        }
+
+        .tool-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .tool-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 10px;
+            background-color: rgba(16, 185, 129, 0.1);
+            color: var(--color-emerald, #10B981);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.35rem;
+            flex-shrink: 0;
+        }
+
+        .tool-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--color-charcoal, #1F2937);
+            margin: 0;
+        }
+
+        .tool-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.4rem;
+        }
+
+        .form-group label {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--color-charcoal, #1F2937);
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 0.65rem 0.85rem;
+            border: 1px solid var(--color-border, #D1D5DB);
+            border-radius: 6px;
+            font-size: 0.9rem;
+            outline: none;
+            transition: border-color 0.2s ease;
+            background-color: #FAFAFA;
+        }
+
+        .form-control:focus {
+            border-color: var(--color-emerald, #10B981);
+            background-color: #FFFFFF;
+        }
+
+        .tool-result-box {
+            background-color: #F9FAFB;
+            border-left: 4px solid var(--color-emerald, #10B981);
+            border-radius: 0 8px 8px 0;
+            padding: 1rem;
+            margin-top: 1.25rem;
+            font-size: 0.9rem;
+        }
+
+        .result-highlight {
+            font-size: 1.35rem;
+            font-weight: 800;
+            color: var(--color-emerald, #10B981);
+            display: block;
+            margin-top: 0.25rem;
+        }
+
+        /* SPOTLIGHT IMAGE CARDS */
+        .spotlight-card {
+            background-color: #FFFFFF;
+            border: 1px solid var(--color-border, #E5E7EB);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .spotlight-img-wrapper {
+            width: 100%;
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .spotlight-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .spotlight-card:hover .spotlight-img {
+            transform: scale(1.05);
+        }
+
+        .spotlight-body {
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .quiz-option {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.85rem;
+            cursor: pointer;
+        }
+
+        .progress-bar-bg {
+            width: 100%;
+            height: 8px;
+            background-color: #E5E7EB;
+            border-radius: 4px;
+            margin-top: 0.5rem;
+            overflow: hidden;
+        }
+
+        .progress-bar-fill {
+            height: 100%;
+            background-color: var(--color-emerald, #10B981);
+            width: 0%;
+            transition: width 0.4s ease;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- TOP BAR -->
+    <div class="top-bar">
+        <span>Dedicated professionals. Your direction. Our workforce support.</span>
+    </div>
+
+    <!-- MAIN HEADER & NAVIGATION -->
+    <header class="header">
+        <div class="container nav-container">
+            <a href="index.html" class="logo-link">
+                <img src="logo.png" alt="CoreAugment Logo" class="logo-img" onerror="this.onerror=null; this.src='https://via.placeholder.com/150x50/1F2937/10B981?text=CoreAugment';">
+            </a>
+
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html" class="active">Home</a></li>
+
+                    <li>
+                        <a href="javascript:void(0);">CoreAugment <i class="fas fa-chevron-down dropdown-icon"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="why-coreaugment.html">Why CoreAugment</a></li>
+                            <li><a href="why-we-exist.html">Why We Exist</a></li>
+                            <li><a href="success-stories.html">Success Stories</a></li>
+                            <li><a href="leadership.html">Leadership Team</a></li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <a href="javascript:void(0);">Investment <i class="fas fa-chevron-down dropdown-icon"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="investment.html">Investment</a></li>
+                            <li><a href="build-your-workforce.html">All Solutions</a></li>
+                            <li><a href="build-your-workforce.html">Build Your Workforce</a></li>
+                            <li><a href="build-your-workforce.html#hire-by-role">Hire by Role</a></li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <a href="javascript:void(0);">How We Work <i class="fas fa-chevron-down dropdown-icon"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="how-we-work.html">How We Work</a></li>
+                            <li><a href="how-we-work.html#our-process">Our Process</a></li>
+                            <li><a href="how-we-work.html#workforce-calculator">Workforce Cost Calculator</a></li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <a href="javascript:void(0);">Contact Us <i class="fas fa-chevron-down dropdown-icon"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="book-a-discovery-call.html">Contact Us</a></li>
+                            <li><a href="faq.html">FAQs</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+            <div class="header-cta">
+                <a href="book-a-discovery-call.html" class="btn btn-primary">Book a Call</a>
+            </div>
+
+            <button type="button" class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false" onclick="toggleMobileNav(this)">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <!-- HERO BANNER -->
+        <section class="banner-dark text-center" style="padding: 4rem 1.5rem;">
+            <div class="container" style="max-width: 850px;">
+                <span style="color: var(--color-emerald, #10B981); font-weight: 700; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 0.05em;">Interactive Planning Suite & Manuals</span>
+                <h1 style="font-size: 2.75rem; font-weight: 800; margin: 0.5rem 0 1rem 0;">Workforce Guides & Free Interactive Tools</h1>
+                <p style="color: #D1D5DB; font-size: 1.15rem; line-height: 1.6;">
+                    Data-driven calculators, team structural builders, and practical guides designed to help modern operators plan, scale, and manage dedicated global teams.
+                </p>
+            </div>
+        </section>
+
+        <!-- TOOLS & GUIDES GRID SECTION -->
+        <section class="section-padding" style="background-color: var(--color-bg-light, #F9FAFB);">
+            <div class="container">
+                
+                <div class="tool-grid">
+
+                    <!-- TOOL 1: WORKFORCE COST CALCULATOR -->
+                    <div class="interactive-tool-card">
+                        <div>
+                            <div class="tool-header">
+                                <div class="tool-icon"><i class="fas fa-calculator"></i></div>
+                                <div>
+                                    <h3 class="tool-title">Workforce Cost Calculator</h3>
+                                </div>
+                            </div>
+                            <p style="color: #6B7280; font-size: 0.88rem;">Compare local hiring costs with CoreAugment workforce investment.</p>
+                            
+                            <div class="tool-form">
+                                <div class="form-group">
+                                    <label for="calc-role">Target Role Category</label>
+                                    <select id="calc-role" class="form-control" onchange="calculateCost()">
+                                        <option value="65000">Software Engineer / Developer</option>
+                                        <option value="55000">Digital Marketing Specialist</option>
+                                        <option value="45000">Operations & Admin Support</option>
+                                        <option value="70000">Data & Financial Analyst</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="calc-headcount">Number of Roles</label>
+                                    <input type="number" id="calc-headcount" class="form-control" value="2" min="1" max="20" oninput="calculateCost()">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tool-result-box">
+                            <span>Estimated Annual Savings:</span>
+                            <span class="result-highlight" id="cost-savings-output">$72,000 / year</span>
+                            <small style="color: #6B7280; font-size: 0.78rem;">Includes direct salary, overhead, tax, and hardware support comparisons.</small>
+                        </div>
+                    </div>
+
+                    <!-- FEATURED GUIDE SPOTLIGHT 1 (Image 7) -->
+                    <div class="spotlight-card">
+                        <div class="spotlight-img-wrapper">
+                            <img src="image7.jpeg" alt="Workforce Planning & Strategy" class="spotlight-img" onerror="this.onerror=null; this.src='https://via.placeholder.com/400x200/1F2937/10B981?text=Workforce+Strategy';">
+                        </div>
+                        <div class="spotlight-body">
+                            <span style="color: var(--color-emerald, #10B981); font-weight: 700; font-size: 0.75rem; text-transform: uppercase;">Operator Guide</span>
+                            <h3 style="font-size: 1.1rem; font-weight: 700; color: var(--color-charcoal, #1F2937); margin: 0.4rem 0;">Maximizing Output via Dedicated Teams</h3>
+                            <p style="color: #6B7280; font-size: 0.85rem; line-height: 1.5; margin-bottom: 1rem;">Learn how leading companies integrate remote talent seamlessly under their own operational direction.</p>
+                            <a href="insights.html" style="color: var(--color-emerald, #10B981); font-weight: 700; font-size: 0.85rem; text-decoration: none; margin-top: auto;">Read Full Article &rarr;</a>
+                        </div>
+                    </div>
+
+                    <!-- TOOL 2: TEAM STRUCTURE BUILDER -->
+                    <div class="interactive-tool-card">
+                        <div>
+                            <div class="tool-header">
+                                <div class="tool-icon"><i class="fas fa-sitemap"></i></div>
+                                <div>
+                                    <h3 class="tool-title">Team Structure Builder</h3>
+                                </div>
+                            </div>
+                            <p style="color: #6B7280; font-size: 0.88rem;">Select departments and experience levels to receive a suggested workforce structure.</p>
+
+                            <div class="tool-form">
+                                <div class="form-group">
+                                    <label for="struct-dept">Primary Department</label>
+                                    <select id="struct-dept" class="form-control" onchange="buildStructure()">
+                                        <option value="tech">Engineering & IT</option>
+                                        <option value="marketing">Digital Marketing & Media</option>
+                                        <option value="ops">Customer Operations & Support</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="struct-seniority">Seniority Focus</label>
+                                    <select id="struct-seniority" class="form-control" onchange="buildStructure()">
+                                        <option value="balanced">Balanced (1 Senior, 2 Mid/Junior)</option>
+                                        <option value="senior">Senior-Led (2 Senior, 1 Mid)</option>
+                                        <option value="execution">Execution Heavy (1 Mid, 3 Junior)</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tool-result-box">
+                            <span>Recommended Squad Composition:</span>
+                            <span class="result-highlight" id="structure-output" style="font-size: 1.05rem; font-weight: 700; margin-top: 0.5rem;">1 Tech Lead + 2 Full-Stack Engineers</span>
+                        </div>
+                    </div>
+
+                    <!-- TOOL 3: GROWTH PLANNER -->
+                    <div class="interactive-tool-card">
+                        <div>
+                            <div class="tool-header">
+                                <div class="tool-icon"><i class="fas fa-chart-line"></i></div>
+                                <div>
+                                    <h3 class="tool-title">Growth Planner</h3>
+                                </div>
+                            </div>
+                            <p style="color: #6B7280; font-size: 0.88rem;">Build a suggested workforce based on business size, growth stage, and operational requirements.</p>
+
+                            <div class="tool-form">
+                                <div class="form-group">
+                                    <label for="growth-stage">Current Business Stage</label>
+                                    <select id="growth-stage" class="form-control" onchange="planGrowth()">
+                                        <option value="seed">Early Stage (1-10 Employee Base)</option>
+                                        <option value="growth">Scaling / Growth (11-50 Employee Base)</option>
+                                        <option value="scale">Established Enterprise (50+ Employee Base)</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="growth-focus">Primary Bottleneck</label>
+                                    <select id="growth-focus" class="form-control" onchange="planGrowth()">
+                                        <option value="speed">Speed to Market & Product Velocity</option>
+                                        <option value="lead">Lead Generation & Marketing Pipeline</option>
+                                        <option value="cost">Operational Overhead & Margins</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tool-result-box">
+                            <span>Target Augmentation Phase:</span>
+                            <span class="result-highlight" id="growth-output" style="font-size: 1rem; font-weight: 700; margin-top: 0.5rem;">Phase 1: Add 2 Full-Time Core Developers</span>
+                        </div>
+                    </div>
+
+                    <!-- FEATURED GUIDE SPOTLIGHT 2 (Image 14) -->
+                    <div class="spotlight-card">
+                        <div class="spotlight-img-wrapper">
+                            <img src="image14.jpeg" alt="Global Talent Evaluation" class="spotlight-img" onerror="this.onerror=null; this.src='https://via.placeholder.com/400x200/1F2937/10B981?text=Talent+Vetting';">
+                        </div>
+                        <div class="spotlight-body">
+                            <span style="color: var(--color-emerald, #10B981); font-weight: 700; font-size: 0.75rem; text-transform: uppercase;">Vetting Guide</span>
+                            <h3 style="font-size: 1.1rem; font-weight: 700; color: var(--color-charcoal, #1F2937); margin: 0.4rem 0;">Why Quality Beats Speed</h3>
+                            <p style="color: #6B7280; font-size: 0.85rem; line-height: 1.5; margin-bottom: 1rem;">Discover how multi-stage skill benchmarking eliminates bad hires and protects your runway.</p>
+                            <a href="why-coreaugment.html" style="color: var(--color-emerald, #10B981); font-weight: 700; font-size: 0.85rem; text-decoration: none; margin-top: auto;">Our Vetting Process &rarr;</a>
+                        </div>
+                    </div>
+
+                    <!-- TOOL 4: HIRING TIMELINE ESTIMATOR -->
+                    <div class="interactive-tool-card">
+                        <div>
+                            <div class="tool-header">
+                                <div class="tool-icon"><i class="fas fa-clock"></i></div>
+                                <div>
+                                    <h3 class="tool-title">Hiring Timeline Estimator</h3>
+                                </div>
+                            </div>
+                            <p style="color: #6B7280; font-size: 0.88rem;">Estimate hiring timelines based on role and experience requirements.</p>
+
+                            <div class="tool-form">
+                                <div class="form-group">
+                                    <label for="time-rarity">Skillset Complexity & Niche</label>
+                                    <select id="time-rarity" class="form-control" onchange="estimateTimeline()">
+                                        <option value="standard">Standard (Admin, Customer Support, QA)</option>
+                                        <option value="specialized">Specialized (Full-Stack Dev, Digital Marketer)</option>
+                                        <option value="niche">Niche / Senior (AI Engineer, Enterprise Architect)</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="time-volume">Roles Needed</label>
+                                    <input type="number" id="time-volume" class="form-control" value="1" min="1" max="10" oninput="estimateTimeline()">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tool-result-box">
+                            <span>Estimated Shortlist Delivery:</span>
+                            <span class="result-highlight" id="timeline-output">10 - 14 Business Days</span>
+                            <small style="color: #6B7280; font-size: 0.78rem;">Includes role profiling, screening, and vetted candidate presentation.</small>
+                        </div>
+                    </div>
+
+                    <!-- TOOL 5: COST OF A BAD HIRE CALCULATOR -->
+                    <div class="interactive-tool-card">
+                        <div>
+                            <div class="tool-header">
+                                <div class="tool-icon"><i class="fas fa-exclamation-triangle"></i></div>
+                                <div>
+                                    <h3 class="tool-title">Cost of a Bad Hire Calculator</h3>
+                                </div>
+                            </div>
+                            <p style="color: #6B7280; font-size: 0.88rem;">Understand the hidden financial impact of poor hiring decisions and turnover.</p>
+
+                            <div class="tool-form">
+                                <div class="form-group">
+                                    <label for="bad-salary">Annual Salary of Role ($)</label>
+                                    <input type="number" id="bad-salary" class="form-control" value="60000" step="5000" oninput="calculateBadHire()">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="bad-months">Months Before Departure</label>
+                                    <input type="number" id="bad-months" class="form-control" value="4" min="1" max="12" oninput="calculateBadHire()">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tool-result-box">
+                            <span>Estimated Total Lost Capital:</span>
+                            <span class="result-highlight" id="bad-hire-output" style="color: #EF4444;">$45,000</span>
+                            <small style="color: #6B7280; font-size: 0.78rem;">Factors in wasted salary, recruiting overhead, onboarding loss, and lost output.</small>
+                        </div>
+                    </div>
+
+                    <!-- TOOL 6: REMOTE READINESS ASSESSMENT -->
+                    <div class="interactive-tool-card">
+                        <div>
+                            <div class="tool-header">
+                                <div class="tool-icon"><i class="fas fa-tasks"></i></div>
+                                <div>
+                                    <h3 class="tool-title">Remote Readiness Assessment</h3>
+                                </div>
+                            </div>
+                            <p style="color: #6B7280; font-size: 0.88rem;">Evaluate whether your business is ready to build and manage a remote team.</p>
+
+                            <div class="tool-form">
+                                <div class="form-group">
+                                    <label>1. Are your core workflows documented in digital tools (Slack, Jira, Asana)?</label>
+                                    <div style="display: flex; gap: 1rem;">
+                                        <label class="quiz-option"><input type="radio" name="q1" value="2" checked onclick="assessReadiness()"> Yes</label>
+                                        <label class="quiz-option"><input type="radio" name="q1" value="0" onclick="assessReadiness()"> Partial / No</label>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label>2. Do you measure performance by clear output/KPIs rather than hours logged?</label>
+                                    <div style="display: flex; gap: 1rem;">
+                                        <label class="quiz-option"><input type="radio" name="q2" value="2" checked onclick="assessReadiness()"> Yes</label>
+                                        <label class="quiz-option"><input type="radio" name="q2" value="0" onclick="assessReadiness()"> Partial / No</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tool-result-box">
+                            <div style="display: flex; justify-content: space-between; align-items: center;">
+                                <span>Readiness Score:</span>
+                                <strong id="readiness-score-text" style="color: var(--color-emerald, #10B981);">100% (High Readiness)</strong>
+                            </div>
+                            <div class="progress-bar-bg">
+                                <div id="readiness-progress" class="progress-bar-fill" style="width: 100%;"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- FEATURED GUIDE SPOTLIGHT 3 (Image 22) -->
+                    <div class="spotlight-card">
+                        <div class="spotlight-img-wrapper">
+                            <img src="image22.jpeg" alt="Scalable Team Architecture" class="spotlight-img" onerror="this.onerror=null; this.src='https://via.placeholder.com/400x200/1F2937/10B981?text=Scalable+Architecture';">
+                        </div>
+                        <div class="spotlight-body">
+                            <span style="color: var(--color-emerald, #10B981); font-weight: 700; font-size: 0.75rem; text-transform: uppercase;">Integration Guide</span>
+                            <h3 style="font-size: 1.1rem; font-weight: 700; color: var(--color-charcoal, #1F2937); margin: 0.4rem 0;">Building Operational Memory</h3>
+                            <p style="color: #6B7280; font-size: 0.85rem; line-height: 1.5; margin-bottom: 1rem;">Why full-time dedicated talent creates enduring company value over project freelancers.</p>
+                            <a href="how-we-work.html" style="color: var(--color-emerald, #10B981); font-weight: 700; font-size: 0.85rem; text-decoration: none; margin-top: auto;">View Process &rarr;</a>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- CTA BANNER -->
+        <section class="banner-dark text-center" style="padding: 4rem 1.5rem;">
+            <div class="container" style="max-width: 800px;">
+                <h2 style="font-size: 2rem; font-weight: 800; color: #FFFFFF; margin-bottom: 0.75rem;">Need Custom Workforce Recommendations?</h2>
+                <p style="color: #D1D5DB; font-size: 1.05rem; margin-bottom: 2rem;">
+                    Speak with an operations manager to analyze your target roles, budget, and growth roadmap.
+                </p>
+                <a href="book-a-discovery-call.html" class="btn btn-primary" style="font-size: 1rem; padding: 0.85rem 2rem;">Book a Free Discovery Call</a>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="grid grid-4">
+                <div>
+                    <h4 class="footer-title">BUILD</h4>
+                    <ul class="footer-links">
+                        <li><a href="build-your-workforce.html">Build Your Workforce</a></li>
+                        <li><a href="how-we-work.html">How We Work</a></li>
+                        <li><a href="investment.html">Investment</a></li>
+                        <li><a href="build-your-workforce.html#hire-by-role">Hire by Role</a></li>
+                        <li><a href="build-your-workforce.html#by-function">Build by Function</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="footer-title">LEARN</h4>
+                    <ul class="footer-links">
+                        <li><a href="faq.html">FAQs</a></li>
+                        <li><a href="book-a-discovery-call.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="footer-title">COMPANY</h4>
+                    <ul class="footer-links">
+                        <li><a href="why-coreaugment.html">Why CoreAugment</a></li>
+                        <li><a href="why-we-exist.html">Why We Exist</a></li>
+                        <li><a href="leadership.html">Leadership</a></li>
+                        <li><a href="success-stories.html">Success Stories</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="footer-title">CONNECT</h4>
+                    <ul class="footer-links">
+                        <li><a href="book-a-discovery-call.html" style="color: var(--color-emerald, #10B981); font-weight: 700;">Book a Discovery Call</a></li>
+                        <li><a href="book-a-discovery-call.html#booking-form">Email Us</a></li>
+                        <li><a href="https://www.linkedin.com/company/coreaugment/posts/?feedView=all" target="_blank">LinkedIn</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div>
+                    &copy; CoreAugment 2026. All rights reserved. Built by operators for growing businesses.
+                </div>
+                <div style="display: flex; gap: 1.5rem;">
+                    <a href="faq.html#privacy-policy">Privacy Policy</a>
+                    <a href="faq.html#terms-of-service">Terms</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- INTERACTIVE TOOLS JAVASCRIPT -->
+    <script>
+        function calculateCost() {
+            const roleSalary = parseFloat(document.getElementById('calc-role').value);
+            const headcount = parseInt(document.getElementById('calc-headcount').value) || 1;
+            const localTotalPerHead = roleSalary * 1.25;
+            const coreAugmentTotalPerHead = roleSalary * 0.50;
+            const annualSavings = (localTotalPerHead - coreAugmentTotalPerHead) * headcount;
+            document.getElementById('cost-savings-output').innerText = `$${annualSavings.toLocaleString()} / year`;
+        }
+
+        function buildStructure() {
+            const dept = document.getElementById('struct-dept').value;
+            const seniority = document.getElementById('struct-seniority').value;
+            const outputEl = document.getElementById('structure-output');
+
+            const structures = {
+                tech: {
+                    balanced: "1 Senior Tech Lead + 2 Full-Stack Engineers",
+                    senior: "2 Senior Software Architects + 1 QA Specialist",
+                    execution: "1 Mid-Level Developer + 3 Junior Engineers"
+                },
+                marketing: {
+                    balanced: "1 Marketing Manager + 1 Content Writer + 1 Media Buyer",
+                    senior: "2 Growth Strategists + 1 Brand Manager",
+                    execution: "1 Marketing Specialist + 3 Content & SEO Reps"
+                },
+                ops: {
+                    balanced: "1 Operations Lead + 2 Customer Success Reps",
+                    senior: "2 Operations Directors + 1 Process Specialist",
+                    execution: "1 Senior Support Rep + 3 Support Specialists"
+                }
+            };
+
+            outputEl.innerText = structures[dept][seniority];
+        }
+
+        function planGrowth() {
+            const stage = document.getElementById('growth-stage').value;
+            const focus = document.getElementById('growth-focus').value;
+            const outputEl = document.getElementById('growth-output');
+
+            if (stage === 'seed') {
+                outputEl.innerText = focus === 'speed' ? "Phase 1: Add 2 Dedicated Developers" : "Phase 1: Add 1 Growth Marketer & 1 Ops Assistant";
+            } else if (stage === 'growth') {
+                outputEl.innerText = focus === 'cost' ? "Phase 1: Migrate 3 Admin & Support Roles to Dedicated Remote" : "Phase 1: Add Full 4-Person Agile Squad";
+            } else {
+                outputEl.innerText = "Phase 1: Establish Dedicated Remote Operations Hub (5-10 Seats)";
+            }
+        }
+
+        function estimateTimeline() {
+            const rarity = document.getElementById('time-rarity').value;
+            const volume = parseInt(document.getElementById('time-volume').value) || 1;
+            const outputEl = document.getElementById('timeline-output');
+
+            let daysBase = 7;
+            if (rarity === 'specialized') daysBase = 12;
+            if (rarity === 'niche') daysBase = 18;
+
+            if (volume > 3) daysBase += 5;
+
+            outputEl.innerText = `${daysBase} - ${daysBase + 5} Business Days`;
+        }
+
+        function calculateBadHire() {
+            const salary = parseFloat(document.getElementById('bad-salary').value) || 60000;
+            const months = parseInt(document.getElementById('bad-months').value) || 4;
+            
+            const salaryPaid = (salary / 12) * months;
+            const recruitingCost = salary * 0.20;
+            const lostProductivity = (salary / 12) * months * 0.5;
+            
+            const totalBadHireCost = Math.round(salaryPaid + recruitingCost + lostProductivity);
+            document.getElementById('bad-hire-output').innerText = `$${totalBadHireCost.toLocaleString()}`;
+        }
+
+        function assessReadiness() {
+            const q1 = parseInt(document.querySelector('input[name="q1"]:checked').value);
+            const q2 = parseInt(document.querySelector('input[name="q2"]:checked').value);
+            
+            const score = ((q1 + q2) / 4) * 100;
+            const progressEl = document.getElementById('readiness-progress');
+            const scoreTextEl = document.getElementById('readiness-score-text');
+
+            progressEl.style.width = score + '%';
+
+            if (score === 100) {
+                scoreTextEl.innerText = "100% (High Readiness)";
+                scoreTextEl.style.color = "var(--color-emerald, #10B981)";
+            } else if (score >= 50) {
+                scoreTextEl.innerText = "50% (Moderate Readiness)";
+                scoreTextEl.style.color = "#F59E0B";
+            } else {
+                scoreTextEl.innerText = "0% (Infrastructure Needed)";
+                scoreTextEl.style.color = "#EF4444";
+            }
+        }
+
+        document.addEventListener("DOMContentLoaded", function() {
+            calculateCost();
+            buildStructure();
+            planGrowth();
+            estimateTimeline();
+            calculateBadHire();
+            assessReadiness();
+        });
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>

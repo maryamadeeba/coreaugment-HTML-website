@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leadership Team | CoreAugment</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        /* Smooth Scroll Behavior */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        
+        .subnav-bar {
+            background-color: #FFFFFF;
+            border-bottom: 1px solid var(--color-border);
+            position: sticky;
+            top: 70px;
+            z-index: 999;
+        }
+
+        .subnav-container {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            padding: 0.75rem 1.5rem;
+        }
+
+        .subnav-link {
+            color: var(--color-charcoal);
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-decoration: none;
+            padding: 0.25rem 0.5rem;
+            border-bottom: 2px solid transparent;
+            transition: all 0.2s ease;
+        }
+
+        .subnav-link:hover {
+            color: var(--color-emerald);
+            border-bottom-color: var(--color-emerald);
+        }
+
+        /* Leadership Team Grid */
+        .leadership-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2.5rem;
+            margin-top: 3rem;
+        }
+
+        .leader-card {
+            background-color: #FFFFFF;
+            border: 1px solid var(--color-border);
+            border-radius: 12px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.03);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .leader-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        .leader-info {
+            padding: 2rem;
+        }
+
+        .leader-name {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--color-charcoal);
+            margin-bottom: 0.25rem;
+        }
+
+        .leader-role {
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: var(--color-emerald);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 1rem;
+        }
+
+        .leader-bio {
+            font-size: 0.95rem;
+            color: var(--color-text-muted);
+            line-height: 1.7;
+        }
+
+        @media (max-width: 768px) {
+            .leadership-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- TOP ANNOUNCEMENT BAR -->
+    <div class="top-bar">
+        <span>Built by experienced business operators with decades of global execution experience.</span>
+        <a href="book-a-discovery-call.html">Meet With Us &rarr;</a>
+    </div>
+
+    <!-- MAIN HEADER & NAVIGATION -->
+    <header class="header">
+        <div class="container nav-container">
+            <a href="index.html" class="logo-link">
+                <img src="logo.png" alt="CoreAugment Logo" class="logo-img" onerror="this.onerror=null; this.src='https://via.placeholder.com/150x50/1F2937/10B981?text=CoreAugment';">
+            </a>
+
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html" class="active">Home</a></li>
+
+                    <li>
+                        <a href="javascript:void(0);">CoreAugment <i class="fas fa-chevron-down dropdown-icon"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="why-coreaugment.html">Why CoreAugment</a></li>
+                            <li><a href="why-we-exist.html">Why We Exist</a></li>
+                            <li><a href="success-stories.html">Success Stories</a></li>
+                            <li><a href="leadership.html">Leadership Team</a></li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <a href="javascript:void(0);">Investment <i class="fas fa-chevron-down dropdown-icon"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="investment.html">Investment</a></li>
+                            <li><a href="build-your-workforce.html">All Solutions</a></li>
+                            <li><a href="build-your-workforce.html">Build Your Workforce</a></li>
+                            <li><a href="build-your-workforce.html#hire-by-role">Hire by Role</a></li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <a href="javascript:void(0);">How We Work <i class="fas fa-chevron-down dropdown-icon"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="how-we-work.html">How We Work</a></li>
+                            <li><a href="how-we-work.html#our-process">Our Process</a></li>
+                            <li><a href="how-we-work.html#workforce-calculator">Workforce Cost Calculator</a></li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <a href="javascript:void(0);">Contact Us <i class="fas fa-chevron-down dropdown-icon"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="book-a-discovery-call.html">Contact Us</a></li>
+                            <li><a href="faq.html">FAQs</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+            <div class="header-cta">
+                <a href="book-a-discovery-call.html" class="btn btn-primary">Book a Call</a>
+            </div>
+
+            <button type="button" class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false" onclick="toggleMobileNav(this)">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main>
+
+        <!-- HERO SECTION -->
+        <section id="hero" class="hero">
+            <div class="container hero-container">
+                <div class="hero-content">
+                    <span class="hero-badge">Leadership</span>
+                    <h1>Built by Operators.</h1>
+                    <p>CoreAugment is led by entrepreneurs and experienced business operators who understand what it takes to build teams, manage operations, and grow businesses.</p>
+                    <div class="hero-buttons">
+                        <a href="#leadership-team" class="btn btn-primary">Meet the Leadership Team</a>
+                        <a href="book-a-discovery-call.html" class="btn btn-outline" style="border-color: #FFFFFF; color: #FFFFFF;">Meet With Us</a>
+                    </div>
+                </div>
+                <div class="hero-image-wrapper">
+                    <img src="image22.jpeg" alt="Leadership Presenting to Team" class="hero-img">
+                </div>
+            </div>
+        </section>
+
+        <!-- LEADERSHIP TEAM SECTION -->
+        <section id="leadership-team" class="section-padding" style="background-color: var(--color-bg-light);">
+            <div class="container">
+                <div class="text-center" style="max-width: 800px; margin: 0 auto 3.5rem auto;">
+                    <span class="section-label">Executive Officers</span>
+                    <h2 class="section-title">LEADERSHIP TEAM</h2>
+                    <h3 class="section-subtitle">Real Operational Experience Across Global Markets</h3>
+                </div>
+
+                <div class="leadership-grid">
+                    
+                    <!-- Leader 1: Jawad Khan -->
+                    <div class="leader-card">
+                        <div class="leader-info">
+                            <h3 class="leader-name">JAWAD KHAN</h3>
+                            <div class="leader-role">Founder and CEO</div>
+                            <p class="leader-bio">
+                                25+ years of international business experience across technology, BPO, ecommerce, supply chain, procurement, operations, and business development.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Leader 2: Iram Batool -->
+                    <div class="leader-card">
+                        <div class="leader-info">
+                            <h3 class="leader-name">IRAM BATOOL</h3>
+                            <div class="leader-role">CFO</div>
+                            <p class="leader-bio">
+                                Experienced in workforce operations, client delivery, business management, and process improvement.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Leader 3: Farjad Khan -->
+                    <div class="leader-card">
+                        <div class="leader-info">
+                            <h3 class="leader-name">FARJAD KHAN</h3>
+                            <div class="leader-role">COO</div>
+                            <p class="leader-bio">
+                                12+ years of experience across global procurement, capital planning, operational excellence, and business process optimization.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Leader 4: Moater Hassan -->
+                    <div class="leader-card">
+                        <div class="leader-info">
+                            <h3 class="leader-name">MOATER HASSAN</h3>
+                            <div class="leader-role">CPO</div>
+                            <p class="leader-bio">
+                                15+ years of experience across HR, administration, and business transformation in Pakistan, UAE, and UK.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- EXPERIENCE BEHIND THE MODEL -->
+        <section id="experience" class="section-padding" style="background-color: #FFFFFF;">
+            <div class="container">
+                <div class="split-section">
+                    <div class="split-text">
+                        <span class="section-label">Practical Knowledge</span>
+                        <h2 class="section-title">EXPERIENCE BEHIND THE MODEL</h2>
+                        <h3 class="section-subtitle">Built on Practical Operating Experience, Not Theory</h3>
+                        <p class="section-lead">
+                            CoreAugment is built on practical operating experience, not theory.
+                        </p>
+                        <p style="color: var(--color-text-muted); line-height: 1.7;">
+                            The leadership team has built and managed businesses, teams, operations, and international client relationships across multiple markets. We bring real-world operational execution directly into your workforce strategy.
+                        </p>
+                    </div>
+
+                    <div class="split-media">
+                        <div class="media-frame">
+                            <img src="image21.jpeg" alt="Leadership Strategic Workshop Session" class="framed-image">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- REVIEWING AGREEMENTS / OPERATIONS SECTION -->
+        <section class="section-padding" style="background-color: var(--color-bg-light);">
+            <div class="container">
+                <div class="split-section reverse">
+                    <div class="split-text">
+                        <span class="section-label">Operational Oversight</span>
+                        <h2 class="section-title">Direct Executive Engagement</h2>
+                        <h3 class="section-subtitle">Delivering High-Precision Workforce Management</h3>
+                        <p class="section-lead">
+                            Every workforce program is backed directly by experienced functional leadership to ensure strict quality controls and seamless client operations.
+                        </p>
+                        <p style="color: var(--color-text-muted); line-height: 1.7;">
+                            From structural HR compliance to financial efficiency, our executives maintain oversight over key processes so your business scales with operational security.
+                        </p>
+                    </div>
+
+                    <div class="split-media">
+                        <div class="media-frame">
+                            <img src="image20.jpeg" alt="Executive Hands Reviewing Operational Documents" class="framed-image">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FINAL CTA SECTION -->
+        <section class="banner-dark text-center" style="padding: 4.5rem 1.5rem;">
+            <div class="container" style="max-width: 800px;">
+                <h2 style="font-size: 2.5rem; font-weight: 800; color: #FFFFFF; margin-bottom: 1rem;">
+                    Let's Put That Experience to Work for Your Business.
+                </h2>
+                <p style="color: #D1D5DB; font-size: 1.15rem; margin-bottom: 2rem; line-height: 1.6;">
+                    Connect directly with our operators to map out your workforce requirements.
+                </p>
+                <a href="book-a-discovery-call.html" class="btn btn-primary" style="font-size: 1.1rem; padding: 0.9rem 2.2rem;">Meet With Us</a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- WEBSITE FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="grid grid-4">
+                <div>
+                    <h4 class="footer-title">BUILD</h4>
+                    <ul class="footer-links">
+                        <li><a href="build-your-workforce.html">Build Your Workforce</a></li>
+                        <li><a href="how-we-work.html">How We Work</a></li>
+                        <li><a href="investment.html">Investment</a></li>
+                        <li><a href="build-your-workforce.html#hire-by-role">Hire by Role</a></li>
+                        <li><a href="build-your-workforce.html#by-function">Build by Function</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="footer-title">LEARN</h4>
+                    <ul class="footer-links">
+                        <li><a href="faq.html">FAQs</a></li>
+                        <li><a href="book-a-discovery-call.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="footer-title">COMPANY</h4>
+                    <ul class="footer-links">
+                        <li><a href="why-coreaugment.html">Why CoreAugment</a></li>
+                        <li><a href="why-we-exist.html">Why We Exist</a></li>
+                        <li><a href="leadership.html">Leadership</a></li>
+                        <li><a href="success-stories.html">Success Stories</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="footer-title">CONNECT</h4>
+                    <ul class="footer-links">
+                        <li><a href="book-a-discovery-call.html" style="color: var(--color-emerald); font-weight: 700;">Book a Discovery Call</a></li>
+                        <li><a href="book-a-discovery-call.html#booking-form">Email Us</a></li>
+                        <li><a href="https://www.linkedin.com/company/coreaugment/posts/?feedView=all" target="_blank">LinkedIn</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div>
+                    &copy; CoreAugment 2026. All rights reserved. Built by operators for growing businesses.
+                </div>
+                <div style="display: flex; gap: 1.5rem;">
+                    <a href="faq.html#privacy-policy">Privacy Policy</a>
+                    <a href="faq.html#terms-of-service">Terms</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

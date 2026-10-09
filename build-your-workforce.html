@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Build Your Workforce | CoreAugment</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+
+        /* SEO Landing Grid Styles for Hire by Role */
+        .seo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.25rem;
+            margin-top: 2rem;
+        }
+
+        .seo-card {
+            background-color: #FFFFFF;
+            border: 1px solid var(--color-border);
+            border-radius: 8px;
+            padding: 1.25rem;
+            transition: all 0.25s ease;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            text-decoration: none;
+            color: var(--color-charcoal);
+            font-weight: 600;
+            font-size: 0.92rem;
+            cursor: pointer;
+        }
+
+        .seo-card:hover {
+            border-color: var(--color-emerald);
+            box-shadow: 0 4px 12px rgba(16, 185, 129, 0.15);
+            transform: translateY(-2px);
+            color: var(--color-emerald);
+        }
+
+        .seo-card i {
+            color: var(--color-emerald);
+            font-size: 0.85rem;
+        }
+
+        /* By Function Item List Styles */
+        .function-list-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .function-item {
+            background-color: #FFFFFF;
+            border: 1px solid var(--color-border);
+            border-radius: 8px;
+            padding: 1.1rem 1.25rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-weight: 600;
+            color: var(--color-charcoal);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
+            transition: all 0.2s ease;
+            text-decoration: none;
+        }
+
+        .function-item i {
+            color: var(--color-emerald);
+            font-size: 1rem;
+        }
+
+        .function-item:hover {
+            border-color: var(--color-emerald);
+            color: var(--color-emerald);
+            transform: translateY(-2px);
+        }
+
+        /* Smooth Anchor Scroll Offset */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        section[id] {
+            scroll-margin-top: 80px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- TOP ANNOUNCEMENT BAR -->
+    <div class="top-bar">
+        <span>Dedicated professionals. Your direction. Our workforce support.</span>
+    </div>
+
+    <!-- MAIN HEADER & NAVIGATION -->
+    <header class="header">
+        <div class="container nav-container">
+            <a href="index.html" class="logo-link">
+                <img src="logo.png" alt="CoreAugment Logo" class="logo-img" onerror="this.onerror=null; this.src='https://via.placeholder.com/150x50/1F2937/10B981?text=CoreAugment';">
+            </a>
+
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html" class="active">Home</a></li>
+
+                    <li>
+                        <a href="javascript:void(0);">CoreAugment <i class="fas fa-chevron-down dropdown-icon"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="why-coreaugment.html">Why CoreAugment</a></li>
+                            <li><a href="why-we-exist.html">Why We Exist</a></li>
+                            <li><a href="success-stories.html">Success Stories</a></li>
+                            <li><a href="leadership.html">Leadership Team</a></li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <a href="javascript:void(0);">Investment <i class="fas fa-chevron-down dropdown-icon"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="investment.html">Investment</a></li>
+                            <li><a href="build-your-workforce.html">All Solutions</a></li>
+                            <li><a href="build-your-workforce.html">Build Your Workforce</a></li>
+                            <li><a href="build-your-workforce.html#hire-by-role">Hire by Role</a></li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <a href="javascript:void(0);">How We Work <i class="fas fa-chevron-down dropdown-icon"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="how-we-work.html">How We Work</a></li>
+                            <li><a href="how-we-work.html#our-process">Our Process</a></li>
+                            <li><a href="how-we-work.html#workforce-calculator">Workforce Cost Calculator</a></li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <a href="javascript:void(0);">Contact Us <i class="fas fa-chevron-down dropdown-icon"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="book-a-discovery-call.html">Contact Us</a></li>
+                            <li><a href="faq.html">FAQs</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+            <div class="header-cta">
+                <a href="book-a-discovery-call.html" class="btn btn-primary">Book a Call</a>
+            </div>
+
+            <button type="button" class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false" onclick="toggleMobileNav(this)">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main>
+
+        <!-- 1. HERO SECTION -->
+        <section class="hero">
+            <div class="container hero-container">
+                <div class="hero-content">
+                    <span class="hero-badge">BUILD YOUR WORKFORCE</span>
+                    <h1>Build the Team Your Business Needs.</h1>
+                    <p>Whether you need one professional or an entire department, CoreAugment helps you build dedicated remote capability around your business.</p>
+                    <div class="hero-buttons">
+                        <a href="book-a-discovery-call.html" class="btn btn-primary">Tell Us What You Need</a>
+                    </div>
+                </div>
+                <div class="hero-image-wrapper">
+                    <img src="image11.jpeg" alt="Build Your Workforce" class="hero-img">
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. BY FUNCTION -->
+        <section id="by-function" class="section-padding" style="background-color: var(--color-bg-light);">
+            <div class="container">
+                <div class="text-center" style="max-width: 850px; margin: 0 auto 2.5rem auto;">
+                    <span class="section-label">BY FUNCTION</span>
+                    <h2 class="section-title">Build Across Your Business.</h2>
+                </div>
+
+                <div class="function-list-grid">
+                    <a href="build-your-finance-team.html" class="function-item"><i class="fas fa-check"></i> Build Your Finance Team.</a>
+                    <a href="build-your-marketing-team.html" class="function-item"><i class="fas fa-check"></i> Build Your Marketing Team.</a>
+                    <a href="build-your-procurement-team.html" class="function-item"><i class="fas fa-check"></i> Build Your Procurement Team.</a>
+                    <a href="build-your-customer-support-team.html" class="function-item"><i class="fas fa-check"></i> Build Your Customer Support Team.</a>
+                    <a href="build-your-sales-team.html" class="function-item"><i class="fas fa-check"></i> Build Your Sales Team.</a>
+                    <a href="build-your-operations-team.html" class="function-item"><i class="fas fa-check"></i> Build Your Operations Team.</a>
+                    <a href="build-your-hr-team.html" class="function-item"><i class="fas fa-check"></i> Build Your HR Team.</a>
+                    <a href="build-your-technology-team.html" class="function-item"><i class="fas fa-check"></i> Build Your Technology Team.</a>
+                    <a href="build-your-ecommerce-team.html" class="function-item"><i class="fas fa-check"></i> Build Your Ecommerce Team.</a>
+                    <a href="build-your-executive-office.html" class="function-item"><i class="fas fa-check"></i> Build Your Executive Office.</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. BY EXPERIENCE -->
+        <section id="by-experience" class="section-padding" style="background-color: #FFFFFF;">
+            <div class="container">
+                <div class="text-center" style="max-width: 850px; margin: 0 auto 3rem auto;">
+                    <span class="section-label">BY EXPERIENCE</span>
+                    <h2 class="section-title">Choose the Experience. Not the Job Title.</h2>
+                </div>
+
+                <div class="grid grid-3">
+                    <div class="card card-feature" style="border-top: 4px solid var(--color-emerald);">
+                        <h3 style="font-size: 1.5rem; margin-bottom: 0.75rem; color: var(--color-charcoal);">Core Associate</h3>
+                        <div style="font-size: 1.8rem; font-weight: 800; color: var(--color-emerald); margin-bottom: 0.5rem;">
+                            USD 1,500<span style="font-size: 0.9rem; color: var(--color-text-muted); font-weight: 400;">/month</span>
+                        </div>
+                    </div>
+
+                    <div class="card card-feature" style="border-top: 4px solid var(--color-emerald); transform: scale(1.02); box-shadow: 0 8px 24px rgba(0,0,0,0.08);">
+                        <h3 style="font-size: 1.5rem; margin-bottom: 0.75rem; color: var(--color-charcoal);">Core Professional</h3>
+                        <div style="font-size: 1.8rem; font-weight: 800; color: var(--color-emerald); margin-bottom: 0.5rem;">
+                            USD 2,500<span style="font-size: 0.9rem; color: var(--color-text-muted); font-weight: 400;">/month</span>
+                        </div>
+                    </div>
+
+                    <div class="card card-feature" style="border-top: 4px solid var(--color-emerald);">
+                        <h3 style="font-size: 1.5rem; margin-bottom: 0.75rem; color: var(--color-charcoal);">Core Expert</h3>
+                        <div style="font-size: 1.8rem; font-weight: 800; color: var(--color-emerald); margin-bottom: 0.5rem;">
+                            From USD 5,000<span style="font-size: 0.9rem; color: var(--color-text-muted); font-weight: 400;">/month</span>
+                        </div>
+                    </div>
+                </div>
+
+                <p class="text-center" style="margin-top: 2.5rem; color: var(--color-text-muted); font-size: 1.1rem; font-weight: 500;">
+                    Your investment is determined by the experience and expertise required for the role.
+                </p>
+            </div>
+        </section>
+
+        <!-- 4. ONE OR MANY -->
+        <section id="one-or-many" class="section-padding" style="background-color: var(--color-bg-light);">
+            <div class="container">
+                <div class="split-section">
+                    <div class="split-text">
+                        <span class="section-label">ONE OR MANY</span>
+                        <h2 class="section-title">Start Small. Scale When You're Ready.</h2>
+                        
+                        <div style="display: flex; flex-direction: column; gap: 1rem; margin-top: 1.5rem;">
+                            <div style="display: flex; align-items: center; gap: 1rem; background: #FFFFFF; padding: 1.1rem 1.25rem; border-radius: 8px; border: 1px solid var(--color-border);">
+                                <i class="fas fa-check-circle" style="color: var(--color-emerald); font-size: 1.2rem;"></i>
+                                <span style="font-weight: 600; font-size: 1.05rem; color: var(--color-charcoal);">Begin with one professional.</span>
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 1rem; background: #FFFFFF; padding: 1.1rem 1.25rem; border-radius: 8px; border: 1px solid var(--color-border);">
+                                <i class="fas fa-check-circle" style="color: var(--color-emerald); font-size: 1.2rem;"></i>
+                                <span style="font-weight: 600; font-size: 1.05rem; color: var(--color-charcoal);">Add more as your requirements grow.</span>
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 1rem; background: #FFFFFF; padding: 1.1rem 1.25rem; border-radius: 8px; border: 1px solid var(--color-border);">
+                                <i class="fas fa-check-circle" style="color: var(--color-emerald); font-size: 1.2rem;"></i>
+                                <span style="font-weight: 600; font-size: 1.05rem; color: var(--color-charcoal);">Build complete functions.</span>
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 1rem; background: #FFFFFF; padding: 1.1rem 1.25rem; border-radius: 8px; border: 1px solid var(--color-border);">
+                                <i class="fas fa-check-circle" style="color: var(--color-emerald); font-size: 1.2rem;"></i>
+                                <span style="font-weight: 600; font-size: 1.05rem; color: var(--color-charcoal);">Expand into new departments.</span>
+                            </div>
+                        </div>
+
+                        <p style="margin-top: 1.5rem; font-size: 1.1rem; font-weight: 600; color: var(--color-emerald);">
+                            CoreAugment grows with your workforce.
+                        </p>
+                    </div>
+
+                    <div class="split-media">
+                        <div class="media-frame">
+                            <img src="image12.jpeg" alt="Start Small Scale When Ready" class="framed-image">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- HIRE BY ROLE SECTION (RETAINED FOR DIRECT ROLES ACCESS) -->
+        <section id="hire-by-role" class="section-padding" style="background-color: #FFFFFF;">
+            <div class="container">
+                <div class="text-center" style="max-width: 850px; margin: 0 auto 2.5rem auto;">
+                    <span class="section-label">ROLES CATALOG</span>
+                    <h2 class="section-title">Hire By Role</h2>
+                    <p style="color: var(--color-text-muted); font-size: 1rem; margin-top: 0.5rem;">
+                        Explore dedicated landing pages for specialized positions.
+                    </p>
+                </div>
+
+                <div class="seo-grid">
+                    <a href="hire-remote-accountants.html" class="seo-card">Hire Remote Accountants <i class="fas fa-arrow-right"></i></a>
+                    <a href="hire-remote-executive-assistants.html" class="seo-card">Hire Remote Executive Assistants <i class="fas fa-arrow-right"></i></a>
+                    <a href="hire-remote-procurement-specialists.html" class="seo-card">Hire Remote Procurement Specialists <i class="fas fa-arrow-right"></i></a>
+                    <a href="hire-remote-customer-support-professionals.html" class="seo-card">Hire Remote Customer Support Professionals <i class="fas fa-arrow-right"></i></a>
+                    <a href="hire-remote-software-developers.html" class="seo-card">Hire Remote Software Developers <i class="fas fa-arrow-right"></i></a>
+                    <a href="hire-remote-hr-professionals.html" class="seo-card">Hire Remote HR Professionals <i class="fas fa-arrow-right"></i></a>
+                    <a href="hire-remote-recruiters.html" class="seo-card">Hire Remote Recruiters <i class="fas fa-arrow-right"></i></a>
+                    <a href="hire-remote-project-managers.html" class="seo-card">Hire Remote Project Managers <i class="fas fa-arrow-right"></i></a>
+                    <a href="hire-remote-operations-professionals.html" class="seo-card">Hire Remote Operations Professionals <i class="fas fa-arrow-right"></i></a>
+                    <a href="hire-remote-marketing-specialists.html" class="seo-card">Hire Remote Marketing Specialists <i class="fas fa-arrow-right"></i></a>
+                    <a href="hire-remote-graphic-designers.html" class="seo-card">Hire Remote Graphic Designers <i class="fas fa-arrow-right"></i></a>
+                    <a href="hire-remote-data-analysts.html" class="seo-card">Hire Remote Data Analysts <i class="fas fa-arrow-right"></i></a>
+                    <a href="hire-remote-supply-chain-professionals.html" class="seo-card">Hire Remote Supply Chain Professionals <i class="fas fa-arrow-right"></i></a>
+                    <a href="hire-remote-ecommerce-professionals.html" class="seo-card">Hire Remote Ecommerce Professionals <i class="fas fa-arrow-right"></i></a>
+                    <a href="hire-remote-bookkeepers.html" class="seo-card">Hire Remote Bookkeepers <i class="fas fa-arrow-right"></i></a>
+                    <a href="hire-remote-financial-analysts.html" class="seo-card">Hire Remote Financial Analysts <i class="fas fa-arrow-right"></i></a>
+                    <a href="hire-remote-payroll-specialists.html" class="seo-card">Hire Remote Payroll Specialists <i class="fas fa-arrow-right"></i></a>
+                    <a href="hire-remote-virtual-assistants.html" class="seo-card">Hire Remote Virtual Assistants <i class="fas fa-arrow-right"></i></a>
+                    <a href="hire-remote-sales-representatives.html" class="seo-card">Hire Remote Sales Representatives <i class="fas fa-arrow-right"></i></a>
+                    <a href="hire-remote-business-development-professionals.html" class="seo-card">Hire Remote Business Development Professionals <i class="fas fa-arrow-right"></i></a>
+                    <a href="hire-remote-customer-success-managers.html" class="seo-card">Hire Remote Customer Success Managers <i class="fas fa-arrow-right"></i></a>
+                    <a href="hire-remote-it-support-specialists.html" class="seo-card">Hire Remote IT Support Specialists <i class="fas fa-arrow-right"></i></a>
+                    <a href="hire-remote-qa-engineers.html" class="seo-card">Hire Remote QA Engineers <i class="fas fa-arrow-right"></i></a>
+                    <a href="hire-remote-ai-specialists.html" class="seo-card">Hire Remote AI Specialists <i class="fas fa-arrow-right"></i></a>
+                    <a href="hire-remote-automation-specialists.html" class="seo-card">Hire Remote Automation Specialists <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. FINAL CTA SECTION -->
+        <section class="banner-dark text-center" style="padding: 5rem 1.5rem;">
+            <div class="container" style="max-width: 800px;">
+                
+                <h2 style="font-size: 2.5rem; font-weight: 800; color: #FFFFFF; margin: 0.5rem 0 1.5rem 0;">
+                    What Are You Building?
+                </h2>
+                <a href="book-a-discovery-call.html" class="btn btn-primary" style="font-size: 1.1rem; padding: 0.9rem 2.2rem;">Start Your Workforce Plan</a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- WEBSITE FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="grid grid-4">
+                <div>
+                    <h4 class="footer-title">BUILD</h4>
+                    <ul class="footer-links">
+                        <li><a href="build-your-workforce.html">Build Your Workforce</a></li>
+                        <li><a href="how-we-work.html">How We Work</a></li>
+                        <li><a href="investment.html">Investment</a></li>
+                        <li><a href="build-your-workforce.html#hire-by-role">Hire by Role</a></li>
+                        <li><a href="build-your-workforce.html#by-function">Build by Function</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="footer-title">LEARN</h4>
+                    <ul class="footer-links">
+                        <li><a href="faq.html">FAQs</a></li>
+                        <li><a href="book-a-discovery-call.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="footer-title">COMPANY</h4>
+                    <ul class="footer-links">
+                        <li><a href="why-coreaugment.html">Why CoreAugment</a></li>
+                        <li><a href="why-we-exist.html">Why We Exist</a></li>
+                        <li><a href="leadership.html">Leadership</a></li>
+                        <li><a href="success-stories.html">Success Stories</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="footer-title">CONNECT</h4>
+                    <ul class="footer-links">
+                        <li><a href="book-a-discovery-call.html" style="color: var(--color-emerald); font-weight: 700;">Book a Discovery Call</a></li>
+                        <li><a href="book-a-discovery-call.html#booking-form">Email Us</a></li>
+                        <li><a href="https://www.linkedin.com/company/coreaugment/posts/?feedView=all" target="_blank">LinkedIn</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div>
+                    &copy; CoreAugment 2026. All rights reserved. Built by operators for growing businesses.
+                </div>
+                <div style="display: flex; gap: 1.5rem;">
+                    <a href="faq.html#privacy-policy">Privacy Policy</a>
+                    <a href="faq.html#terms-of-service">Terms</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jobs & Careers | CoreAugment</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        /* Smooth Scroll Behavior */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        
+        .subnav-bar {
+            background-color: #FFFFFF;
+            border-bottom: 1px solid var(--color-border);
+            position: sticky;
+            top: 70px;
+            z-index: 999;
+        }
+
+        .subnav-container {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            padding: 0.75rem 1.5rem;
+        }
+
+        .subnav-link {
+            color: var(--color-charcoal);
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-decoration: none;
+            padding: 0.25rem 0.5rem;
+            border-bottom: 2px solid transparent;
+            transition: all 0.2s ease;
+        }
+
+        .subnav-link:hover {
+            color: var(--color-emerald);
+            border-bottom-color: var(--color-emerald);
+        }
+
+        /* Job Cards Grid */
+        .jobs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            margin-top: 2.5rem;
+        }
+
+        .job-card {
+            background-color: #FFFFFF;
+            border: 1px solid var(--color-border);
+            border-radius: 10px;
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.03);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .job-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 18px rgba(0, 0, 0, 0.08);
+        }
+
+        .job-tag {
+            display: inline-block;
+            background-color: rgba(16, 185, 129, 0.1);
+            color: var(--color-emerald);
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            margin-bottom: 1rem;
+        }
+
+        .job-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--color-charcoal);
+            margin-bottom: 0.5rem;
+        }
+
+        .job-meta {
+            font-size: 0.85rem;
+            color: var(--color-text-muted);
+            margin-bottom: 1rem;
+            display: flex;
+            gap: 1rem;
+        }
+
+        .job-description {
+            font-size: 0.92rem;
+            color: var(--color-text-muted);
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Culture Grid */
+        .culture-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2.5rem;
+        }
+
+        .culture-card {
+            background-color: #FFFFFF;
+            border: 1px solid var(--color-border);
+            padding: 1.75rem;
+            border-radius: 8px;
+        }
+
+        .culture-icon {
+            font-size: 1.8rem;
+            color: var(--color-emerald);
+            margin-bottom: 1rem;
+        }
+
+        .culture-card h4 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--color-charcoal);
+            margin-bottom: 0.5rem;
+        }
+
+        .culture-card p {
+            font-size: 0.9rem;
+            color: var(--color-text-muted);
+            line-height: 1.5;
+            margin: 0;
+        }
+
+        @media (max-width: 768px) {
+            .subnav-container {
+                gap: 1rem;
+                flex-wrap: wrap;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- TOP ANNOUNCEMENT BAR -->
+    <div class="top-bar">
+        <span>Built by experienced business operators with decades of global execution experience.</span>
+        <a href="book-a-discovery-call.html">Meet With Us &rarr;</a>
+    </div>
+
+    <!-- MAIN HEADER & NAVIGATION -->
+    <header class="header">
+        <div class="container nav-container">
+            <a href="index.html" class="logo-link">
+                <img src="logo.png" alt="CoreAugment Logo" class="logo-img" onerror="this.onerror=null; this.src='https://via.placeholder.com/150x50/1F2937/10B981?text=CoreAugment';">
+            </a>
+
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html" class="active">Home</a></li>
+
+                    <li>
+                        <a href="javascript:void(0);">CoreAugment <i class="fas fa-chevron-down dropdown-icon"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="why-coreaugment.html">Why CoreAugment</a></li>
+                            <li><a href="why-we-exist.html">Why We Exist</a></li>
+                            <li><a href="success-stories.html">Success Stories</a></li>
+                            <li><a href="leadership.html">Leadership Team</a></li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <a href="javascript:void(0);">Investment <i class="fas fa-chevron-down dropdown-icon"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="investment.html">Investment</a></li>
+                            <li><a href="build-your-workforce.html">All Solutions</a></li>
+                            <li><a href="build-your-workforce.html">Build Your Workforce</a></li>
+                            <li><a href="build-your-workforce.html#hire-by-role">Hire by Role</a></li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <a href="javascript:void(0);">How We Work <i class="fas fa-chevron-down dropdown-icon"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="how-we-work.html">How We Work</a></li>
+                            <li><a href="how-we-work.html#our-process">Our Process</a></li>
+                            <li><a href="how-we-work.html#workforce-calculator">Workforce Cost Calculator</a></li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <a href="javascript:void(0);">Contact Us <i class="fas fa-chevron-down dropdown-icon"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="book-a-discovery-call.html">Contact Us</a></li>
+                            <li><a href="faq.html">FAQs</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+            <div class="header-cta">
+                <a href="book-a-discovery-call.html" class="btn btn-primary">Book a Call</a>
+            </div>
+
+            <button type="button" class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false" onclick="toggleMobileNav(this)">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main>
+
+        <!-- HERO SECTION -->
+        <section id="hero" class="hero">
+            <div class="container hero-container">
+                <div class="hero-content">
+                    <span class="hero-badge">Careers & Talent</span>
+                    <h1>Join a Global Operator-Led Team.</h1>
+                    <p>At CoreAugment, we empower top-tier talent to collaborate with fast-growing international businesses. Discover impactful roles and grow your professional career alongside industry experts.</p>
+                    <div class="hero-buttons">
+                        <a href="#openings" class="btn btn-primary">View Open Roles</a>
+                        <a href="book-a-discovery-call.html" class="btn btn-outline" style="border-color: #FFFFFF; color: #FFFFFF;">Partner With Us</a>
+                    </div>
+                </div>
+                <div class="hero-image-wrapper">
+                    <img src="image24.jpeg" alt="Global Professional Conference and Career Development Session" class="hero-img">
+                </div>
+            </div>
+        </section>
+
+        <!-- OPEN POSITIONS SECTION -->
+        <section id="openings" class="section-padding" style="background-color: var(--color-bg-light);">
+            <div class="container">
+                <div class="text-center" style="max-width: 800px; margin: 0 auto 2.5rem auto;">
+                    <span class="section-label">Opportunities</span>
+                    <h2 class="section-title">CURRENT JOB OPENINGS</h2>
+                    <h3 class="section-subtitle">Explore Opportunities Across Core Functional Areas</h3>
+                </div>
+
+                <div class="jobs-grid">
+                    
+                    <!-- Job Card 1 -->
+                    <div class="job-card">
+                        <div>
+                            <span class="job-tag">Marketing & Operations</span>
+                            <h3 class="job-title">Digital Marketing Analyst</h3>
+                            <div class="job-meta">
+                                <span><i class="fas fa-map-marker-alt"></i> Remote / Hybrid</span>
+                                <span><i class="fas fa-clock"></i> Full-Time</span>
+                            </div>
+                            <p class="job-description">
+                                Manage multi-channel digital campaigns, track conversion metrics, optimize online listings, and oversee content engagement for international enterprise clients.
+                            </p>
+                        </div>
+                        <a href="mailto:careers@coreaugment.com?subject=Application:%20Digital%20Marketing%20Analyst" class="btn btn-outline" style="text-align: center; width: 100%;">Apply Now</a>
+                    </div>
+
+                    <!-- Job Card 2 -->
+                    <div class="job-card">
+                        <div>
+                            <span class="job-tag">Engineering</span>
+                            <h3 class="job-title">Full-Stack Web Developer</h3>
+                            <div class="job-meta">
+                                <span><i class="fas fa-map-marker-alt"></i> Remote</span>
+                                <span><i class="fas fa-clock"></i> Full-Time</span>
+                            </div>
+                            <p class="job-description">
+                                Architect responsive corporate web platforms, maintain database structures, integrate custom themes, and build optimized client-facing web applications.
+                            </p>
+                        </div>
+                        <a href="mailto:careers@coreaugment.com?subject=Application:%20Full-Stack%20Web%20Developer" class="btn btn-outline" style="text-align: center; width: 100%;">Apply Now</a>
+                    </div>
+
+                    <!-- Job Card 3 -->
+                    <div class="job-card">
+                        <div>
+                            <span class="job-tag">Operations</span>
+                            <h3 class="job-title">Procurement Specialist</h3>
+                            <div class="job-meta">
+                                <span><i class="fas fa-map-marker-alt"></i> Hybrid</span>
+                                <span><i class="fas fa-clock"></i> Full-Time</span>
+                            </div>
+                            <p class="job-description">
+                                Support global supply chain operations, optimize vendor management workflows, evaluate cost efficiencies, and streamline cross-border logistics.
+                            </p>
+                        </div>
+                        <a href="mailto:careers@coreaugment.com?subject=Application:%20Procurement%20Specialist" class="btn btn-outline" style="text-align: center; width: 100%;">Apply Now</a>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- WHY JOIN US / CULTURE SECTION -->
+        <section id="culture" class="section-padding" style="background-color: #FFFFFF;">
+            <div class="container">
+                <div class="split-section">
+                    <div class="split-text">
+                        <span class="section-label">Work Culture</span>
+                        <h2 class="section-title">WHY BUILD YOUR CAREER AT COREAUGMENT?</h2>
+                        <h3 class="section-subtitle">Real Exposure, Continuous Growth, and Professional Leadership</h3>
+                        <p class="section-lead">
+                            We believe operational excellence starts with empowered talent.
+                        </p>
+                        <p style="color: var(--color-text-muted); line-height: 1.7;">
+                            Working with CoreAugment means gaining direct access to international markets, hands-on mentorship from seasoned business operators, and an environment designed to accelerate your career progression.
+                        </p>
+
+                        <div class="culture-grid">
+                            <div class="culture-card">
+                                <div class="culture-icon"><i class="fas fa-globe"></i></div>
+                                <h4>Global Projects</h4>
+                                <p>Work directly on operational strategies and deliverables for global enterprises.</p>
+                            </div>
+                            <div class="culture-card">
+                                <div class="culture-icon"><i class="fas fa-user-tie"></i></div>
+                                <h4>Operator Mentorship</h4>
+                                <p>Receive direct guidance from senior executives with decades of field experience.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="split-media">
+                        <div class="media-frame">
+                            <img src="image23.jpeg" alt="Professional Networking and Business Exchange" class="framed-image">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- HIRING PROCESS SECTION -->
+        <section id="process" class="section-padding" style="background-color: var(--color-bg-light);">
+            <div class="container">
+                <div class="text-center" style="max-width: 800px; margin: 0 auto 3.5rem auto;">
+                    <span class="section-label">Application Journey</span>
+                    <h2 class="section-title">OUR HIRING PROCESS</h2>
+                    <h3 class="section-subtitle">A Transparent, Efficient Approach to Getting Onboarded</h3>
+                </div>
+
+                <div class="grid grid-4 text-center">
+                    <div style="background: #FFFFFF; padding: 2rem; border-radius: 8px; border: 1px solid var(--color-border);">
+                        <div style="font-size: 2rem; font-weight: 800; color: var(--color-emerald); margin-bottom: 0.5rem;">01</div>
+                        <h4 style="font-size: 1.1rem; font-weight: 700; color: var(--color-charcoal); margin-bottom: 0.5rem;">Submit Application</h4>
+                        <p style="font-size: 0.88rem; color: var(--color-text-muted); line-height: 1.5; margin: 0;">Send your resume and functional portfolio to our talent team.</p>
+                    </div>
+
+                    <div style="background: #FFFFFF; padding: 2rem; border-radius: 8px; border: 1px solid var(--color-border);">
+                        <div style="font-size: 2rem; font-weight: 800; color: var(--color-emerald); margin-bottom: 0.5rem;">02</div>
+                        <h4 style="font-size: 1.1rem; font-weight: 700; color: var(--color-charcoal); margin-bottom: 0.5rem;">Initial Screening</h4>
+                        <p style="font-size: 0.88rem; color: var(--color-text-muted); line-height: 1.5; margin: 0;">A brief consultation to assess your background, expertise, and goals.</p>
+                    </div>
+
+                    <div style="background: #FFFFFF; padding: 2rem; border-radius: 8px; border: 1px solid var(--color-border);">
+                        <div style="font-size: 2rem; font-weight: 800; color: var(--color-emerald); margin-bottom: 0.5rem;">03</div>
+                        <h4 style="font-size: 1.1rem; font-weight: 700; color: var(--color-charcoal); margin-bottom: 0.5rem;">Functional Review</h4>
+                        <p style="font-size: 0.88rem; color: var(--color-text-muted); line-height: 1.5; margin: 0;">In-depth technical or operational discussion with our team lead.</p>
+                    </div>
+
+                    <div style="background: #FFFFFF; padding: 2rem; border-radius: 8px; border: 1px solid var(--color-border);">
+                        <div style="font-size: 2rem; font-weight: 800; color: var(--color-emerald); margin-bottom: 0.5rem;">04</div>
+                        <h4 style="font-size: 1.1rem; font-weight: 700; color: var(--color-charcoal); margin-bottom: 0.5rem;">Welcome Onboard</h4>
+                        <p style="font-size: 0.88rem; color: var(--color-text-muted); line-height: 1.5; margin: 0;">Receive an offer, complete orientation, and start driving real impact.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FINAL CTA SECTION -->
+        <section class="banner-dark text-center" style="padding: 4.5rem 1.5rem;">
+            <div class="container" style="max-width: 800px;">
+                <h2 style="font-size: 2.5rem; font-weight: 800; color: #FFFFFF; margin-bottom: 1rem;">
+                    Don't See Your Role Listed?
+                </h2>
+                <p style="color: #D1D5DB; font-size: 1.15rem; margin-bottom: 2rem; line-height: 1.6;">
+                    We are always looking for high-performing professionals to join our talent database for upcoming international client projects.
+                </p>
+                <a href="mailto:careers@coreaugment.com?subject=General%20Talent%20Inquiry" class="btn btn-primary" style="font-size: 1.1rem; padding: 0.9rem 2.2rem;">Send General Application</a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- WEBSITE FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="grid grid-4">
+                <div>
+                    <h4 class="footer-title">BUILD</h4>
+                    <ul class="footer-links">
+                        <li><a href="build-your-workforce.html">Build Your Workforce</a></li>
+                        <li><a href="how-we-work.html">How We Work</a></li>
+                        <li><a href="investment.html">Investment</a></li>
+                        <li><a href="build-your-workforce.html#hire-by-role">Hire by Role</a></li>
+                        <li><a href="build-your-workforce.html#by-function">Build by Function</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="footer-title">LEARN</h4>
+                    <ul class="footer-links">
+                        <li><a href="faq.html">FAQs</a></li>
+                        <li><a href="book-a-discovery-call.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="footer-title">COMPANY</h4>
+                    <ul class="footer-links">
+                        <li><a href="why-coreaugment.html">Why CoreAugment</a></li>
+                        <li><a href="why-we-exist.html">Why We Exist</a></li>
+                        <li><a href="leadership.html">Leadership</a></li>
+                        <li><a href="success-stories.html">Success Stories</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="footer-title">CONNECT</h4>
+                    <ul class="footer-links">
+                        <li><a href="book-a-discovery-call.html" style="color: var(--color-emerald); font-weight: 700;">Book a Discovery Call</a></li>
+                        <li><a href="book-a-discovery-call.html#booking-form">Email Us</a></li>
+                        <li><a href="https://www.linkedin.com/company/coreaugment/posts/?feedView=all" target="_blank">LinkedIn</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div>
+                    &copy; CoreAugment 2026. All rights reserved. Built by operators for growing businesses.
+                </div>
+                <div style="display: flex; gap: 1.5rem;">
+                    <a href="faq.html#privacy-policy">Privacy Policy</a>
+                    <a href="faq.html#terms-of-service">Terms</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

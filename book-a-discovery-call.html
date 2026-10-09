@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book a Discovery Call | CoreAugment</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+
+        /* Hero Image Layout */
+        .hero-img-call {
+            width: 100%;
+            height: 100%;
+            max-height: 520px;
+            object-fit: cover;
+            object-position: center 20%;
+            display: block;
+            border-radius: 16px;
+            transition: transform 0.4s ease;
+        }
+
+        .hero-image-wrapper:hover .hero-img-call {
+            transform: scale(1.03);
+        }
+
+        /* Section Specific Cards */
+        .feature-list-card {
+            background: #FFFFFF;
+            border: 1px solid var(--color-border);
+            border-radius: 12px;
+            padding: 2.5rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+            height: 100%;
+        }
+
+        .check-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.85rem;
+            margin-bottom: 1rem;
+            font-size: 1.05rem;
+            color: var(--color-charcoal);
+            line-height: 1.5;
+        }
+
+        .check-item i {
+            color: var(--color-emerald);
+            font-size: 1.2rem;
+            margin-top: 0.2rem;
+            flex-shrink: 0;
+        }
+
+        /* Number Steps List */
+        .step-card {
+            background: #FFFFFF;
+            border: 1px solid var(--color-border);
+            border-radius: 10px;
+            padding: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 1.25rem;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.02);
+            transition: transform 0.2s ease, border-color 0.2s ease;
+        }
+
+        .step-card:hover {
+            transform: translateY(-2px);
+            border-color: var(--color-emerald);
+        }
+
+        .step-number {
+            width: 42px;
+            height: 42px;
+            background-color: rgba(16, 185, 129, 0.1);
+            color: var(--color-emerald);
+            font-weight: 700;
+            font-size: 1.2rem;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        /* Form Customization */
+        .form-card {
+            background: #FFFFFF;
+            border: 1px solid var(--color-border);
+            border-radius: 16px;
+            padding: 2.5rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.25rem;
+        }
+
+        .form-group-full {
+            grid-column: span 2;
+        }
+
+        .form-label {
+            display: block;
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-transform: none;
+            color: var(--color-charcoal);
+            margin-bottom: 0.4rem;
+        }
+
+        .form-input, .form-select, .form-textarea {
+            width: 100%;
+            padding: 0.8rem 1rem;
+            border: 1px solid var(--color-border);
+            border-radius: 8px;
+            font-size: 0.95rem;
+            color: var(--color-charcoal);
+            background-color: #FAFAFA;
+            transition: border-color 0.2s ease, background-color 0.2s ease;
+        }
+
+        .form-input:focus, .form-select:focus, .form-textarea:focus {
+            outline: none;
+            border-color: var(--color-emerald);
+            background-color: #FFFFFF;
+        }
+
+        @media (max-width: 768px) {
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+            .form-group-full {
+                grid-column: span 1;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- TOP ANNOUNCEMENT BAR -->
+    <div class="top-bar">
+        <span>Dedicated professionals. Your direction. Our workforce support.</span>
+    </div>
+
+    <!-- MAIN HEADER & NAVIGATION -->
+    <header class="header">
+        <div class="container nav-container">
+            <a href="index.html" class="logo-link">
+                <img src="logo.png" alt="CoreAugment Logo" class="logo-img" onerror="this.onerror=null; this.src='https://via.placeholder.com/150x50/1F2937/10B981?text=CoreAugment';">
+            </a>
+
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html" class="active">Home</a></li>
+
+                    <li>
+                        <a href="javascript:void(0);">CoreAugment <i class="fas fa-chevron-down dropdown-icon"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="why-coreaugment.html">Why CoreAugment</a></li>
+                            <li><a href="why-we-exist.html">Why We Exist</a></li>
+                            <li><a href="success-stories.html">Success Stories</a></li>
+                            <li><a href="leadership.html">Leadership Team</a></li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <a href="javascript:void(0);">Investment <i class="fas fa-chevron-down dropdown-icon"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="investment.html">Investment</a></li>
+                            <li><a href="build-your-workforce.html">All Solutions</a></li>
+                            <li><a href="build-your-workforce.html">Build Your Workforce</a></li>
+                            <li><a href="build-your-workforce.html#hire-by-role">Hire by Role</a></li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <a href="javascript:void(0);">How We Work <i class="fas fa-chevron-down dropdown-icon"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="how-we-work.html">How We Work</a></li>
+                            <li><a href="how-we-work.html#our-process">Our Process</a></li>
+                            <li><a href="how-we-work.html#workforce-calculator">Workforce Cost Calculator</a></li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <a href="javascript:void(0);">Contact Us <i class="fas fa-chevron-down dropdown-icon"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="book-a-discovery-call.html">Contact Us</a></li>
+                            <li><a href="faq.html">FAQs</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+            <div class="header-cta">
+                <a href="book-a-discovery-call.html" class="btn btn-primary">Book a Call</a>
+            </div>
+
+            <button type="button" class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false" onclick="toggleMobileNav(this)">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <main>
+
+        <!-- HERO SECTION -->
+        <section class="hero">
+            <div class="container hero-container">
+                <div class="hero-content">
+                    <span class="hero-badge">Book A Discovery Call</span>
+                    <h1>Let's Build Your Workforce.</h1>
+                    <p>Every successful partnership starts with a conversation. Tell us about your business, your goals, and the team you're looking to build.</p>
+                    <div class="hero-buttons">
+                        <a href="#booking-form" class="btn btn-primary">Schedule Your Discovery Call</a>
+                    </div>
+                </div>
+                <div class="hero-image-wrapper">
+                    <img src="image26.jpeg" alt="Professional answering a call on a smartphone" class="hero-img-call">
+                </div>
+            </div>
+        </section>
+
+        <!-- A CONVERSATION FOCUSED ON YOUR BUSINESS -->
+        <section class="section-padding bg-light">
+            <div class="container">
+                <div class="grid grid-2" style="align-items: center; gap: 3rem;">
+                    <div>
+                        <span class="text-emerald" style="font-weight: 700; text-transform: uppercase; letter-spacing: 1px; font-size: 0.85rem;">Consultative & Strategic</span>
+                        <h2 style="font-size: 2.2rem; margin-top: 0.5rem; margin-bottom: 1.5rem; color: var(--color-charcoal);">A Conversation Focused On Your Business</h2>
+                        
+                        <div class="check-item"><i class="fas fa-check-circle"></i> <span>Understand your hiring goals.</span></div>
+                        <div class="check-item"><i class="fas fa-check-circle"></i> <span>Discuss workforce challenges.</span></div>
+                        <div class="check-item"><i class="fas fa-check-circle"></i> <span>Identify the right team structure.</span></div>
+                        <div class="check-item"><i class="fas fa-check-circle"></i> <span>Answer your questions.</span></div>
+                        <div class="check-item"><i class="fas fa-check-circle"></i> <span>Recommend the best approach.</span></div>
+                        <div class="check-item"><i class="fas fa-check-circle"></i> <span>Provide clear next steps.</span></div>
+
+                        <div style="margin-top: 2rem; padding: 1.25rem; background-color: rgba(16, 185, 129, 0.08); border-left: 4px solid var(--color-emerald); border-radius: 4px;">
+                            <p style="margin: 0; font-weight: 600; color: var(--color-charcoal); font-size: 1.05rem;">
+                                No pressure. No obligation. Just practical advice.
+                            </p>
+                        </div>
+                    </div>
+                    <div>
+                        <img src="image27.jpeg" alt="Friendly business consultant talking on the phone" style="width: 100%; border-radius: 12px; box-shadow: 0 8px 24px rgba(0,0,0,0.08); object-fit: cover; max-height: 480px;">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- A CLEAR PLAN IN ABOUT 30 MINUTES -->
+        <section class="section-padding">
+            <div class="container">
+                <div class="text-center" style="max-width: 700px; margin: 0 auto 3rem auto;">
+                    <span class="text-emerald" style="font-weight: 700; text-transform: uppercase; letter-spacing: 1px; font-size: 0.85rem;">Efficient & Value-Driven</span>
+                    <h2 style="font-size: 2.2rem; color: var(--color-charcoal); margin-top: 0.5rem;">A Clear Plan In About 30 Minutes</h2>
+                </div>
+
+                <div class="grid grid-3" style="gap: 1.5rem;">
+                    <div class="step-card">
+                        <div class="step-number">1</div>
+                        <div style="font-weight: 600; color: var(--color-charcoal);">Understand Your Business.</div>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-number">2</div>
+                        <div style="font-weight: 600; color: var(--color-charcoal);">Discuss Your Requirements.</div>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-number">3</div>
+                        <div style="font-weight: 600; color: var(--color-charcoal);">Recommend the Best Approach.</div>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-number">4</div>
+                        <div style="font-weight: 600; color: var(--color-charcoal);">Answer Your Questions.</div>
+                    </div>
+                    <div class="step-card" style="grid-column: span 2;">
+                        <div class="step-number">5</div>
+                        <div style="font-weight: 600; color: var(--color-charcoal);">Define the Next Steps.</div>
+                    </div>
+                </div>
+
+                <div class="text-center" style="margin-top: 2.5rem;">
+                    <p style="font-size: 1.15rem; color: var(--color-text-muted); font-weight: 500;">
+                        You'll leave with clarity, whether you choose to work with us or not.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- THIS CALL IS IDEAL FOR YOU IF... -->
+        <section class="section-padding bg-light">
+            <div class="container">
+                <div class="grid grid-2" style="align-items: center; gap: 3rem;">
+                    <div>
+                        <img src="image28.jpeg" alt="Excited business owner celebrating remote team success at laptop" style="width: 100%; border-radius: 12px; box-shadow: 0 8px 24px rgba(0,0,0,0.08); object-fit: cover; max-height: 480px;">
+                    </div>
+                    <div>
+                        <span class="text-emerald" style="font-weight: 700; text-transform: uppercase; letter-spacing: 1px; font-size: 0.85rem;">Who We Serve</span>
+                        <h2 style="font-size: 2.2rem; margin-top: 0.5rem; margin-bottom: 1.5rem; color: var(--color-charcoal);">This Call Is Ideal For You If...</h2>
+                        
+                        <div class="check-item"><i class="fas fa-check"></i> <span>You're planning to hire.</span></div>
+                        <div class="check-item"><i class="fas fa-check"></i> <span>You're building a remote team.</span></div>
+                        <div class="check-item"><i class="fas fa-check"></i> <span>You're replacing key roles.</span></div>
+                        <div class="check-item"><i class="fas fa-check"></i> <span>You're scaling quickly.</span></div>
+                        <div class="check-item"><i class="fas fa-check"></i> <span>You're exploring workforce solutions.</span></div>
+                        <div class="check-item"><i class="fas fa-check"></i> <span>You're comparing hiring options.</span></div>
+
+                        <p style="margin-top: 2rem; font-size: 1.1rem; color: var(--color-charcoal); font-weight: 600; line-height: 1.5;">
+                            If building the right team is on your agenda, this conversation is worth having.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- HELP US PREPARE (FORM SECTION) -->
+        <section id="booking-form" class="section-padding" style="scroll-margin-top: 80px;">
+            <div class="container" style="max-width: 850px;">
+                <div class="text-center" style="margin-bottom: 2.5rem;">
+                    <span class="text-emerald" style="font-weight: 700; letter-spacing: 1px; font-size: 0.85rem;">Get started</span>
+                    <h2 style="font-size: 2.2rem; color: var(--color-charcoal); margin-top: 0.5rem;">Help us prepare</h2>
+                    <p style="color: var(--color-text-muted);">Fill out these quick details so we can tailor our discovery session to your exact needs.</p>
+                </div>
+
+                <div class="form-card">
+                    <!--
+                        This form submits to FormSubmit.co, a free email-forwarding service for static
+                        HTML forms — it requires no backend code and delivers submissions (including the
+                        uploaded file) straight to hello@coreaugment.com. The first submission triggers a
+                        one-time confirmation email to that inbox; click the link in it to activate delivery.
+                        Swap the action URL below if you'd rather use your own backend or a different service.
+                    -->
+                    <form action="https://formsubmit.co/hello@coreaugment.com" method="POST" enctype="multipart/form-data">
+                        <input type="hidden" name="_subject" value="New Discovery Call Request from Website">
+                        <input type="hidden" name="_captcha" value="false">
+                        <div class="form-grid">
+                            <div>
+                                <label class="form-label" for="name">Name *</label>
+                                <input type="text" id="name" name="name" class="form-input" placeholder="John Doe" required>
+                            </div>
+                            <div>
+                                <label class="form-label" for="company">Company *</label>
+                                <input type="text" id="company" name="company" class="form-input" placeholder="Acme Inc." required>
+                            </div>
+                            <div>
+                                <label class="form-label" for="email">Work Email *</label>
+                                <input type="email" id="email" name="email" class="form-input" placeholder="john@company.com" required>
+                            </div>
+                            <div>
+                                <label class="form-label" for="phone">Phone *</label>
+                                <input type="tel" id="phone" name="phone" class="form-input" placeholder="+1 (555) 000-0000" required>
+                            </div>
+                            <div>
+                                <label class="form-label" for="country">Country *</label>
+                                <input type="text" id="country" name="country" class="form-input" placeholder="United States" required>
+                            </div>
+                            <div>
+                                <label class="form-label" for="company-size">Company Size *</label>
+                                <select id="company-size" name="company_size" class="form-select" required>
+                                    <option value="" disabled selected>Select size...</option>
+                                    <option value="1-10">1 - 10 employees</option>
+                                    <option value="11-50">11 - 50 employees</option>
+                                    <option value="51-200">51 - 200 employees</option>
+                                    <option value="201-500">201 - 500 employees</option>
+                                    <option value="500+">500+ employees</option>
+                                </select>
+                            </div>
+                            <div class="form-group-full">
+                                <label class="form-label" for="industry">Industry *</label>
+                                <input type="text" id="industry" name="industry" class="form-input" placeholder="e.g. Technology, Healthcare, E-commerce" required>
+                            </div>
+                            <div class="form-group-full">
+                                <label class="form-label" for="roles">What roles are you looking to hire? *</label>
+                                <input type="text" id="roles" name="roles" class="form-input" placeholder="e.g. Senior Full-Stack Developer, Accountant, EA" required>
+                            </div>
+                            <div class="form-group-full">
+                                <label class="form-label" for="count">How many professionals do you need? *</label>
+                                <select id="count" name="headcount" class="form-select" required>
+                                    <option value="" disabled selected>Select headcount...</option>
+                                    <option value="1">1 Professional</option>
+                                    <option value="2-5">2 - 5 Professionals</option>
+                                    <option value="6-10">6 - 10 Professionals</option>
+                                    <option value="10+">10+ Professionals (Functional Pod / Team)</option>
+                                </select>
+                            </div>
+                            <div class="form-group-full">
+                                <label class="form-label" for="notes">Anything else you'd like us to know?</label>
+                                <textarea id="notes" name="notes" class="form-textarea" rows="4" placeholder="Share any specific timezone requirements, tech stacks, or start date timelines..."></textarea>
+                            </div>
+                            <div class="form-group-full">
+                                <label class="form-label" for="attachment">Upload any relevant documents that help us understand your requirements (pdf, docx, jpg, or png)</label>
+                                <input type="file" id="attachment" name="attachment" class="form-input" accept=".pdf,.doc,.docx,.jpg,.jpeg,.png">
+                            </div>
+                            <div class="form-group-full" style="margin-top: 1rem;">
+                                <button type="submit" class="btn btn-primary" style="width: 100%; padding: 1rem; font-size: 1.05rem;">Request Discovery Call</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- FINAL CTA SECTION -->
+        <section class="banner-dark text-center" style="padding: 4.5rem 1.5rem;">
+            <div class="container" style="max-width: 800px;">
+                <h2 style="font-size: 2.3rem; font-weight: 800; color: #FFFFFF; margin-bottom: 1rem;">
+                    Your Next Great Hire Starts With One Conversation.
+                </h2>
+                <p style="color: #D1D5DB; font-size: 1.15rem; margin-bottom: 2rem; line-height: 1.6;">
+                    Whether you need one professional or an entire workforce, we'll help you find the right path forward.
+                </p>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- WEBSITE FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="grid grid-4">
+                <div>
+                    <h4 class="footer-title">BUILD</h4>
+                    <ul class="footer-links">
+                        <li><a href="build-your-workforce.html">Build Your Workforce</a></li>
+                        <li><a href="how-we-work.html">How We Work</a></li>
+                        <li><a href="investment.html">Investment</a></li>
+                        <li><a href="build-your-workforce.html#hire-by-role">Hire by Role</a></li>
+                        <li><a href="build-your-workforce.html#by-function">Build by Function</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="footer-title">LEARN</h4>
+                    <ul class="footer-links">
+                        <li><a href="faq.html">FAQs</a></li>
+                        <li><a href="book-a-discovery-call.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="footer-title">COMPANY</h4>
+                    <ul class="footer-links">
+                        <li><a href="why-coreaugment.html">Why CoreAugment</a></li>
+                        <li><a href="why-we-exist.html">Why We Exist</a></li>
+                        <li><a href="leadership.html">Leadership</a></li>
+                        <li><a href="success-stories.html">Success Stories</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="footer-title">CONNECT</h4>
+                    <ul class="footer-links">
+                        <li><a href="book-a-discovery-call.html" style="color: var(--color-emerald); font-weight: 700;">Book a Discovery Call</a></li>
+                        <li><a href="book-a-discovery-call.html#booking-form">Email Us</a></li>
+                        <li><a href="https://www.linkedin.com/company/coreaugment/posts/?feedView=all" target="_blank">LinkedIn</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div>
+                    &copy; CoreAugment 2026. All rights reserved. Built by operators for growing businesses.
+                </div>
+                <div style="display: flex; gap: 1.5rem;">
+                    <a href="faq.html#privacy-policy">Privacy Policy</a>
+                    <a href="faq.html#terms-of-service">Terms</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

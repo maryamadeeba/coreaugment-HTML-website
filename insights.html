@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insights & Free Tools | CoreAugment</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+
+        .category-filters {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            justify-content: center;
+            margin-top: 1.5rem;
+        }
+
+        .filter-chip {
+            background-color: #FFFFFF;
+            border: 1px solid var(--color-border);
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: var(--color-text-muted);
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .filter-chip:hover, .filter-chip.active {
+            background-color: var(--color-emerald);
+            color: #FFFFFF;
+            border-color: var(--color-emerald);
+        }
+
+        /* CARD & IMAGE ENHANCEMENTS */
+        .card {
+            background-color: #FFFFFF;
+            border: 1px solid var(--color-border);
+            border-radius: 12px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
+        }
+
+        .card-image-wrapper {
+            width: 100%;
+            height: 220px;
+            overflow: hidden;
+            position: relative;
+            background-color: #F3F4F6;
+        }
+
+        .card-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            transition: transform 0.5s ease;
+        }
+
+        .card:hover .card-image {
+            transform: scale(1.04);
+        }
+
+        .card-body {
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .tool-card {
+            background-color: #FFFFFF;
+            border: 1px solid var(--color-border);
+            border-radius: 12px;
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .tool-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
+        }
+
+        .tool-output {
+            background-color: var(--color-bg-light);
+            border-radius: 8px;
+            padding: 1rem;
+            margin-top: 1rem;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- TOP ANNOUNCEMENT BAR -->
+    <div class="top-bar">
+        <span>Dedicated professionals. Your direction. Our workforce support.</span>
+    </div>
+
+    <!-- MAIN HEADER & NAVIGATION -->
+    <header class="header">
+        <div class="container nav-container">
+            <a href="index.html" class="logo-link">
+                <img src="logo.png" alt="CoreAugment Logo" class="logo-img" onerror="this.onerror=null; this.src='https://via.placeholder.com/150x50/1F2937/10B981?text=CoreAugment';">
+            </a>
+
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html" class="active">Home</a></li>
+
+                    <li>
+                        <a href="javascript:void(0);">CoreAugment <i class="fas fa-chevron-down dropdown-icon"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="why-coreaugment.html">Why CoreAugment</a></li>
+                            <li><a href="why-we-exist.html">Why We Exist</a></li>
+                            <li><a href="success-stories.html">Success Stories</a></li>
+                            <li><a href="leadership.html">Leadership Team</a></li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <a href="javascript:void(0);">Investment <i class="fas fa-chevron-down dropdown-icon"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="investment.html">Investment</a></li>
+                            <li><a href="build-your-workforce.html">All Solutions</a></li>
+                            <li><a href="build-your-workforce.html">Build Your Workforce</a></li>
+                            <li><a href="build-your-workforce.html#hire-by-role">Hire by Role</a></li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <a href="javascript:void(0);">How We Work <i class="fas fa-chevron-down dropdown-icon"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="how-we-work.html">How We Work</a></li>
+                            <li><a href="how-we-work.html#our-process">Our Process</a></li>
+                            <li><a href="how-we-work.html#workforce-calculator">Workforce Cost Calculator</a></li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <a href="javascript:void(0);">Contact Us <i class="fas fa-chevron-down dropdown-icon"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="book-a-discovery-call.html">Contact Us</a></li>
+                            <li><a href="faq.html">FAQs</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+            <div class="header-cta">
+                <a href="book-a-discovery-call.html" class="btn btn-primary">Book a Call</a>
+            </div>
+
+            <button type="button" class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false" onclick="toggleMobileNav(this)">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main>
+
+        <!-- HERO SECTION -->
+        <section class="banner-dark text-center" style="padding: 4rem 1.5rem;">
+            <div class="container" style="max-width: 850px;">
+                <span style="color: var(--color-emerald); font-weight: 700; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 0.05em;">Knowledge & Ideas</span>
+                <h1 style="font-size: 2.75rem; font-weight: 800; margin: 0.5rem 0 1rem 0;">Ideas for Building Better Workforces.</h1>
+                <p style="color: #D1D5DB; font-size: 1.15rem; margin-bottom: 2rem; line-height: 1.6;">
+                    Practical insights, strategic operational frameworks, and actionable leadership perspectives on modern workforce construction.
+                </p>
+                <div style="display: flex; gap: 1rem; justify-content: center;">
+                    <a href="#articles" class="btn btn-primary">Explore Insights</a>
+                    <a href="#tools" class="btn btn-secondary">Try Free Tools</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- CATEGORY FILTERS -->
+        <section style="background-color: var(--color-bg-light); padding: 1.5rem 0; border-bottom: 1px solid var(--color-border);">
+            <div class="container text-center">
+                <span style="font-size: 0.8rem; font-weight: 700; color: var(--color-text-muted); text-transform: uppercase; display: block; margin-bottom: 0.5rem;">Browse by Category</span>
+                <div class="category-filters">
+                    <button class="filter-chip active">All</button>
+                    <button class="filter-chip">Hiring & Vetting</button>
+                    <button class="filter-chip">Remote Operations</button>
+                    <button class="filter-chip">Leadership & Strategy</button>
+                    <button class="filter-chip">Finance & Economics</button>
+                    <button class="filter-chip">Technology & Capability</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- INSIGHT ARTICLES GRID WITH UPDATED IMAGES -->
+        <section id="articles" class="section-padding" style="background-color: #FFFFFF;">
+            <div class="container">
+                <div class="text-center" style="max-width: 800px; margin: 0 auto 3rem auto;">
+                    <h2 style="font-size: 2.25rem; font-weight: 800; color: var(--color-charcoal);">Featured Operational Insights</h2>
+                    <p style="color: var(--color-text-muted); font-size: 1.05rem;">Deep-dive perspectives on scaling capability, team design, and execution strategy.</p>
+                </div>
+
+                <div class="grid grid-3">
+                    
+                    <!-- Article 1 -->
+                    <div class="card">
+                        <div class="card-image-wrapper">
+                            <img src="image29.jpeg" alt="Strategic Workplace Ideas & Innovation" class="card-image">
+                        </div>
+                        <div class="card-body">
+                            <span style="color: var(--color-emerald); font-weight: 700; font-size: 0.75rem; text-transform: uppercase;">Leadership & Strategy</span>
+                            <h3 style="font-size: 1.15rem; font-weight: 700; color: var(--color-charcoal); margin: 0.5rem 0;">Innovation Through High-Impact Workforce Design</h3>
+                            <p style="color: var(--color-text-muted); font-size: 0.88rem; line-height: 1.6; margin-bottom: 1.25rem;">How modern executives structure teams to unleash operational agility while keeping leadership focused on strategic growth priorities.</p>
+                            <a href="insights-details.html" style="color: var(--color-emerald); font-weight: 700; font-size: 0.85rem; text-decoration: none; margin-top: auto;">Read Article &rarr;</a>
+                        </div>
+                    </div>
+
+                    <!-- Article 2 -->
+                    <div class="card">
+                        <div class="card-image-wrapper">
+                            <img src="image30.jpeg" alt="Skill Vetting & Talent Competency" class="card-image">
+                        </div>
+                        <div class="card-body">
+                            <span style="color: var(--color-emerald); font-weight: 700; font-size: 0.75rem; text-transform: uppercase;">Hiring & Vetting</span>
+                            <h3 style="font-size: 1.15rem; font-weight: 700; color: var(--color-charcoal); margin: 0.5rem 0;">Why "Right Fit First" Outperforms Staffing Speed</h3>
+                            <p style="color: var(--color-text-muted); font-size: 0.88rem; line-height: 1.6; margin-bottom: 1.25rem;">Rushing candidate shortlists produces misalignments and costly turnover. Discover how rigorous multi-stage skill evaluation protects long-term momentum.</p>
+                            <a href="insights-details.html" style="color: var(--color-emerald); font-weight: 700; font-size: 0.85rem; text-decoration: none; margin-top: auto;">Read Article &rarr;</a>
+                        </div>
+                    </div>
+
+                    <!-- Article 3 -->
+                    <div class="card">
+                        <div class="card-image-wrapper">
+                            <img src="image31.jpeg" alt="Connected Modern Team Collaboration" class="card-image">
+                        </div>
+                        <div class="card-body">
+                            <span style="color: var(--color-emerald); font-weight: 700; font-size: 0.75rem; text-transform: uppercase;">Remote Operations</span>
+                            <h3 style="font-size: 1.15rem; font-weight: 700; color: var(--color-charcoal); margin: 0.5rem 0;">Managing Dedicated Remote Talent Under Your Direction</h3>
+                            <p style="color: var(--color-text-muted); font-size: 0.88rem; line-height: 1.6; margin-bottom: 1.25rem;">Practical management frameworks for integrating dedicated global talent into your existing workflows with complete communication alignment.</p>
+                            <a href="insights-details.html" style="color: var(--color-emerald); font-weight: 700; font-size: 0.85rem; text-decoration: none; margin-top: auto;">Read Article &rarr;</a>
+                        </div>
+                    </div>
+
+                    <!-- Article 4 -->
+                    <div class="card">
+                        <div class="card-image-wrapper">
+                            <img src="image32.jpeg" alt="Finance and Cost Evaluation for Workforce Building" class="card-image">
+                        </div>
+                        <div class="card-body">
+                            <span style="color: var(--color-emerald); font-weight: 700; font-size: 0.75rem; text-transform: uppercase;">Finance & Economics</span>
+                            <h3 style="font-size: 1.15rem; font-weight: 700; color: var(--color-charcoal); margin: 0.5rem 0;">The True Cost of Building Local vs. Global Dedicated Teams</h3>
+                            <p style="color: var(--color-text-muted); font-size: 0.88rem; line-height: 1.6; margin-bottom: 1.25rem;">Evaluating overhead, benefits, hardware, and payroll compliance to reveal how direct dedicated models preserve meaningful operational savings.</p>
+                            <a href="insights-details.html" style="color: var(--color-emerald); font-weight: 700; font-size: 0.85rem; text-decoration: none; margin-top: auto;">Read Article &rarr;</a>
+                        </div>
+                    </div>
+
+                    <!-- Article 5 -->
+                    <div class="card">
+                        <div class="card-image-wrapper">
+                            <img src="image33.jpeg" alt="Modern Software Workflows and Tech Capability" class="card-image">
+                        </div>
+                        <div class="card-body">
+                            <span style="color: var(--color-emerald); font-weight: 700; font-size: 0.75rem; text-transform: uppercase;">Technology & Capability</span>
+                            <h3 style="font-size: 1.15rem; font-weight: 700; color: var(--color-charcoal); margin: 0.5rem 0;">Augmenting Dedicated Talent with Modern Software Workflows</h3>
+                            <p style="color: var(--color-text-muted); font-size: 0.88rem; line-height: 1.6; margin-bottom: 1.25rem;">Pairing experienced remote professionals with modern SaaS productivity stacks to optimize throughput across administrative and technical roles.</p>
+                            <a href="insights-details.html" style="color: var(--color-emerald); font-weight: 700; font-size: 0.85rem; text-decoration: none; margin-top: auto;">Read Article &rarr;</a>
+                        </div>
+                    </div>
+
+                    <!-- Article 6 -->
+                    <div class="card">
+                        <div class="card-image-wrapper">
+                            <img src="image34.jpeg" alt="Dedicated Capability and Institutional Memory" class="card-image">
+                        </div>
+                        <div class="card-body">
+                            <span style="color: var(--color-emerald); font-weight: 700; font-size: 0.75rem; text-transform: uppercase;">Leadership & Strategy</span>
+                            <h3 style="font-size: 1.15rem; font-weight: 700; color: var(--color-charcoal); margin: 0.5rem 0;">Transitioning from Transactional Freelancers to Dedicated Capability</h3>
+                            <p style="color: var(--color-text-muted); font-size: 0.88rem; line-height: 1.6; margin-bottom: 1.25rem;">Why project-based gig marketplaces lead to knowledge loss and how dedicated full-time talent builds enduring operational institutional memory.</p>
+                            <a href="insights-details.html" style="color: var(--color-emerald); font-weight: 700; font-size: 0.85rem; text-decoration: none; margin-top: auto;">Read Article &rarr;</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- FREE INTERACTIVE WORKFORCE TOOLS -->
+        <section id="tools" class="section-padding" style="background-color: var(--color-bg-light); border-top: 1px solid var(--color-border);">
+            <div class="container">
+                <div class="text-center" style="max-width: 800px; margin: 0 auto 3.5rem auto;">
+                    <span style="color: var(--color-emerald); font-weight: 700; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 0.05em;">Interactive Resources</span>
+                    <h2 style="font-size: 2.25rem; font-weight: 800; color: var(--color-charcoal); margin-top: 0.5rem;">Free Interactive Workforce Tools</h2>
+                    <p style="color: var(--color-text-muted); font-size: 1.05rem;">Data-driven planning tools to help you budget, calculate savings, and estimate team delivery.</p>
+                </div>
+
+                <div class="grid grid-3">
+                    <!-- Tool 1 -->
+                    <div class="tool-card">
+                        <div>
+                            <i class="fas fa-calculator" style="font-size: 2rem; color: var(--color-emerald); margin-bottom: 1rem;"></i>
+                            <h3 style="font-size: 1.2rem; font-weight: 700; color: var(--color-charcoal); margin-bottom: 0.5rem;">Workforce Cost Calculator</h3>
+                            <p style="color: var(--color-text-muted); font-size: 0.85rem;">Model overall cost differences between local hiring and CoreAugment’s transparent workforce investment.</p>
+                        </div>
+                        <div class="tool-output">
+                            <span style="display: block; font-weight: 700; color: var(--color-charcoal);">See Your Estimated Annual Savings</span>
+                            <a href="guides.html" class="btn btn-primary" style="font-size: 0.8rem; padding: 0.5rem 1rem; width: 100%; margin-top: 1rem; text-align: center; display: inline-block;">Launch Calculator</a>
+                        </div>
+                    </div>
+
+                    <!-- Tool 2 -->
+                    <div class="tool-card">
+                        <div>
+                            <i class="fas fa-exclamation-triangle" style="font-size: 2rem; color: var(--color-emerald); margin-bottom: 1rem;"></i>
+                            <h3 style="font-size: 1.2rem; font-weight: 700; color: var(--color-charcoal); margin-bottom: 0.5rem;">Cost of a Bad Hire Calculator</h3>
+                            <p style="color: var(--color-text-muted); font-size: 0.85rem;">Calculate the hidden financial impact of rapid, unvetted hiring decisions on operational momentum.</p>
+                        </div>
+                        <div class="tool-output">
+                            <span style="display: block; font-weight: 700; color: var(--color-charcoal);">Risk Loss Prevention</span>
+                            <a href="guides.html" class="btn btn-primary" style="font-size: 0.8rem; padding: 0.5rem 1rem; width: 100%; margin-top: 1rem; text-align: center; display: inline-block;">Calculate Risk Loss</a>
+                        </div>
+                    </div>
+
+                    <!-- Tool 3 -->
+                    <div class="tool-card">
+                        <div>
+                            <i class="fas fa-clock" style="font-size: 2rem; color: var(--color-emerald); margin-bottom: 1rem;"></i>
+                            <h3 style="font-size: 1.2rem; font-weight: 700; color: var(--color-charcoal); margin-bottom: 0.5rem;">Hiring Timeline Estimator</h3>
+                            <p style="color: var(--color-text-muted); font-size: 0.85rem;">Estimate shortlisting schedules based on role complexity and experience requirements.</p>
+                        </div>
+                        <div class="tool-output">
+                            <span style="display: block; font-weight: 700; color: var(--color-charcoal);">Expected Shortlist: 2–3 Weeks</span>
+                            <a href="guides.html" class="btn btn-primary" style="font-size: 0.8rem; padding: 0.5rem 1rem; width: 100%; margin-top: 1rem; text-align: center; display: inline-block;">View Timeline Model</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FINAL CTA -->
+        <section class="banner-dark text-center" style="padding: 4rem 1.5rem;">
+            <div class="container" style="max-width: 800px;">
+                <h3 style="font-size: 1.5rem; font-weight: 700; color: var(--color-emerald); margin-bottom: 1rem;">
+                    Ready to Scale Your Operational Capability?
+                </h3>
+                <p style="color: #D1D5DB; font-size: 1.1rem; margin-bottom: 2rem;">
+                    Tell us what you're building. We'll help you determine the optimal way to build the dedicated team behind it.
+                </p>
+                <a href="book-a-discovery-call.html" class="btn btn-primary" style="font-size: 1.1rem; padding: 0.85rem 2rem;">Schedule a Discovery Call</a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="grid grid-4">
+                <div>
+                    <h4 class="footer-title">BUILD</h4>
+                    <ul class="footer-links">
+                        <li><a href="build-your-workforce.html">Build Your Workforce</a></li>
+                        <li><a href="how-we-work.html">How We Work</a></li>
+                        <li><a href="investment.html">Investment</a></li>
+                        <li><a href="build-your-workforce.html#hire-by-role">Hire by Role</a></li>
+                        <li><a href="build-your-workforce.html#by-function">Build by Function</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="footer-title">LEARN</h4>
+                    <ul class="footer-links">
+                        <li><a href="faq.html">FAQs</a></li>
+                        <li><a href="book-a-discovery-call.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="footer-title">COMPANY</h4>
+                    <ul class="footer-links">
+                        <li><a href="why-coreaugment.html">Why CoreAugment</a></li>
+                        <li><a href="why-we-exist.html">Why We Exist</a></li>
+                        <li><a href="leadership.html">Leadership</a></li>
+                        <li><a href="success-stories.html">Success Stories</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="footer-title">CONNECT</h4>
+                    <ul class="footer-links">
+                        <li><a href="book-a-discovery-call.html" style="color: var(--color-emerald); font-weight: 700;">Book a Discovery Call</a></li>
+                        <li><a href="book-a-discovery-call.html#booking-form">Email Us</a></li>
+                        <li><a href="https://www.linkedin.com/company/coreaugment/posts/?feedView=all" target="_blank">LinkedIn</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div>
+                    &copy; CoreAugment 2026. All rights reserved. Built by operators for growing businesses.
+                </div>
+                <div style="display: flex; gap: 1.5rem;">
+                    <a href="faq.html#privacy-policy">Privacy Policy</a>
+                    <a href="faq.html#terms-of-service">Terms</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

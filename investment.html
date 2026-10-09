@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Investment & Pricing Structure | CoreAugment</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+
+        /* Investment Cards Styling */
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 2.5rem;
+        }
+
+        .pricing-card {
+            background-color: #FFFFFF;
+            border: 1px solid var(--color-border);
+            border-radius: 12px;
+            padding: 2.5rem 2rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            position: relative;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
+        }
+
+        .pricing-card.featured {
+            border: 2px solid var(--color-emerald);
+            box-shadow: 0 8px 20px rgba(16, 185, 129, 0.12);
+        }
+
+        .pricing-badge {
+            position: absolute;
+            top: -14px;
+            right: 20px;
+            background-color: var(--color-emerald);
+            color: #FFFFFF;
+            font-size: 0.75rem;
+            font-weight: 700;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .pricing-header h3 {
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: var(--color-charcoal);
+            margin-bottom: 0.5rem;
+        }
+
+        .pricing-header p {
+            font-size: 0.88rem;
+            color: var(--color-text-muted);
+            min-height: 40px;
+        }
+
+        .pricing-amount {
+            margin: 1.5rem 0;
+            padding: 1rem 0;
+            border-top: 1px solid var(--color-bg-light);
+            border-bottom: 1px solid var(--color-bg-light);
+        }
+
+        .pricing-amount .price {
+            font-size: 2.25rem;
+            font-weight: 800;
+            color: var(--color-charcoal);
+        }
+
+        .pricing-amount .period {
+            font-size: 0.88rem;
+            color: var(--color-text-muted);
+        }
+
+        .pricing-features {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 2rem 0;
+        }
+
+        .pricing-features li {
+            font-size: 0.9rem;
+            color: var(--color-charcoal);
+            margin-bottom: 0.85rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 0.6rem;
+        }
+
+        .pricing-features li i {
+            color: var(--color-emerald);
+            margin-top: 0.2rem;
+            flex-shrink: 0;
+        }
+
+        @media (max-width: 992px) {
+            .pricing-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- TOP ANNOUNCEMENT BAR -->
+    <div class="top-bar">
+        <span>Transparent, predictable workforce investments with zero hidden overhead.</span>
+    </div>
+
+    <!-- MAIN HEADER & NAVIGATION -->
+    <header class="header">
+        <div class="container nav-container">
+            <a href="index.html" class="logo-link">
+                <img src="logo.png" alt="CoreAugment Logo" class="logo-img" onerror="this.onerror=null; this.src='https://via.placeholder.com/150x50/1F2937/10B981?text=CoreAugment';">
+            </a>
+
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html" class="active">Home</a></li>
+
+                    <li>
+                        <a href="javascript:void(0);">CoreAugment <i class="fas fa-chevron-down dropdown-icon"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="why-coreaugment.html">Why CoreAugment</a></li>
+                            <li><a href="why-we-exist.html">Why We Exist</a></li>
+                            <li><a href="success-stories.html">Success Stories</a></li>
+                            <li><a href="leadership.html">Leadership Team</a></li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <a href="javascript:void(0);">Investment <i class="fas fa-chevron-down dropdown-icon"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="investment.html">Investment</a></li>
+                            <li><a href="build-your-workforce.html">All Solutions</a></li>
+                            <li><a href="build-your-workforce.html">Build Your Workforce</a></li>
+                            <li><a href="build-your-workforce.html#hire-by-role">Hire by Role</a></li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <a href="javascript:void(0);">How We Work <i class="fas fa-chevron-down dropdown-icon"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="how-we-work.html">How We Work</a></li>
+                            <li><a href="how-we-work.html#our-process">Our Process</a></li>
+                            <li><a href="how-we-work.html#workforce-calculator">Workforce Cost Calculator</a></li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <a href="javascript:void(0);">Contact Us <i class="fas fa-chevron-down dropdown-icon"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="book-a-discovery-call.html">Contact Us</a></li>
+                            <li><a href="faq.html">FAQs</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+            <div class="header-cta">
+                <a href="book-a-discovery-call.html" class="btn btn-primary">Book a Call</a>
+            </div>
+
+            <button type="button" class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false" onclick="toggleMobileNav(this)">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main>
+
+        <!-- HERO SECTION -->
+        <section class="hero">
+            <div class="container hero-container">
+                <div class="hero-content">
+                    <span class="hero-badge">Transparent Pricing Model</span>
+                    <h1>Investment & Cost Efficiency</h1>
+                    <p>Flat monthly retainers covering talent compensation, local benefits, tax compliance, high-spec equipment, and dedicated operational support - with zero hidden fees.</p>
+                    <div class="hero-buttons">
+                        <a href="#pricing-models" class="btn btn-primary">View Pricing Tiers</a>
+                        <a href="how-we-work.html#workforce-calculator" class="btn btn-outline" style="border-color: #FFFFFF; color: #FFFFFF;">Calculate ROI</a>
+                    </div>
+                </div>
+                <div class="hero-image-wrapper">
+                    <img src="image18.jpeg" alt="Stack of Coins Illustrating Investment Growth" class="hero-img">
+                </div>
+            </div>
+        </section>
+
+        <!-- VALUE PROPOSITION OVERVIEW -->
+        <section class="section-padding" style="background-color: #FFFFFF;">
+            <div class="container">
+                <div class="split-section">
+                    <div class="split-text">
+                        <span class="section-label">Financial Clarity</span>
+                        <h2 class="section-title">Reinvest Savings into Growth</h2>
+                        <h3 class="section-subtitle">A Meaningful Reduction in Total Labor Overhead</h3>
+                        <p class="section-lead">
+                            Traditional domestic hiring carries enormous hidden burdens: health insurance premiums, payroll taxes, hardware procurement, legal compliance, and office space overhead.
+                        </p>
+                        <p style="color: var(--color-text-muted); line-height: 1.7;">
+                            CoreAugment consolidates all employment costs into a predictable, single monthly billing statement. You gain elite top-tier professionals while freeing capital to scale product development, marketing, and core operations.
+                        </p>
+                    </div>
+
+                    <div class="split-media">
+                        <div class="media-frame">
+                            <img src="image17.jpeg" alt="Financial Calculations and Cash Accounting" class="framed-image">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PRICING MODELS / TIERS SECTION -->
+        <section id="pricing-models" class="section-padding" style="background-color: var(--color-bg-light);">
+            <div class="container">
+                <div class="text-center" style="max-width: 800px; margin: 0 auto 3rem auto;">
+                    <span class="section-label">Flexible Engagement Tiers</span>
+                    <h2 class="section-title">TALENT INVESTMENT TIERS</h2>
+                    <h3 class="section-subtitle">Structured for Every Stage of Company Growth</h3>
+                </div>
+
+                <p class="text-center" style="max-width: 700px; margin: -1.5rem auto 2.5rem auto; color: var(--color-text-muted);">
+                    The same three tiers you saw on the homepage, in full — what each level of experience actually includes, so you know exactly what you're paying for before you talk to us.
+                </p>
+
+                <div class="pricing-grid">
+
+                    <!-- Card 1: Core Associate -->
+                    <div class="pricing-card">
+                        <div class="pricing-header">
+                            <h3>Core Associate</h3>
+                            <p>For capable junior professionals supporting execution, coordination, and routine operational work.</p>
+                        </div>
+                        <div class="pricing-amount">
+                            <span class="price">$1,500</span>
+                            <span class="period">/ month / dedicated FTE</span>
+                        </div>
+                        <p style="font-size: 0.82rem; color: var(--color-text-muted); margin-top: -1rem; margin-bottom: 1.5rem;">
+                            Roughly $18,000/year — one predictable monthly invoice, billed with no long-term lock-in.
+                        </p>
+                        <ul class="pricing-features">
+                            <li><i class="fas fa-check-circle"></i> 1–3 years of relevant experience</li>
+                            <li><i class="fas fa-check-circle"></i> Full-time, dedicated to your business only</li>
+                            <li><i class="fas fa-check-circle"></i> Ideal for admin, data entry, customer support & back-office roles</li>
+                            <li><i class="fas fa-check-circle"></i> Complete local tax & payroll compliance handled for you</li>
+                            <li><i class="fas fa-check-circle"></i> Workstation & high-speed internet setup included</li>
+                            <li><i class="fas fa-check-circle"></i> CoreAugment HR & operational oversight</li>
+                        </ul>
+                        <a href="book-a-discovery-call.html" class="btn btn-outline" style="text-align: center; width: 100%;">Build Team Tier &rarr;</a>
+                    </div>
+
+                    <!-- Card 2: Core Professional (Featured) -->
+                    <div class="pricing-card featured">
+                        <span class="pricing-badge">Most Popular</span>
+                        <div class="pricing-header">
+                            <h3>Core Professional</h3>
+                            <p>For experienced professionals who can independently own responsibilities and deliver results.</p>
+                        </div>
+                        <div class="pricing-amount">
+                            <span class="price">$2,500</span>
+                            <span class="period">/ month / dedicated FTE</span>
+                        </div>
+                        <p style="font-size: 0.82rem; color: var(--color-text-muted); margin-top: -1rem; margin-bottom: 1.5rem;">
+                            Roughly $30,000/year — the tier most growing teams start with.
+                        </p>
+                        <ul class="pricing-features">
+                            <li><i class="fas fa-check-circle"></i> 3–6+ years of industry experience</li>
+                            <li><i class="fas fa-check-circle"></i> Owns a function independently — analysts, marketers, accountants & more</li>
+                            <li><i class="fas fa-check-circle"></i> Advanced role-specific tools & software proficiency</li>
+                            <li><i class="fas fa-check-circle"></i> Dedicated performance account manager</li>
+                            <li><i class="fas fa-check-circle"></i> Full medical & employee benefits package included</li>
+                            <li><i class="fas fa-check-circle"></i> Flexible timezone alignment with your business hours</li>
+                        </ul>
+                        <a href="book-a-discovery-call.html" class="btn btn-primary" style="text-align: center; width: 100%;">Build Team Tier &rarr;</a>
+                    </div>
+
+                    <!-- Card 3: Core Expert -->
+                    <div class="pricing-card">
+                        <div class="pricing-header">
+                            <h3>Core Expert</h3>
+                            <p>For senior professionals, specialists, functional leaders, and experienced operators.</p>
+                        </div>
+                        <div class="pricing-amount">
+                            <span style="font-size: 0.9rem; font-weight: 400; color: var(--color-text-muted);">From</span>
+                            <span class="price">$5,000</span>
+                            <span class="period">/ month / dedicated FTE</span>
+                        </div>
+                        <p style="font-size: 0.82rem; color: var(--color-text-muted); margin-top: -1rem; margin-bottom: 1.5rem;">
+                            From roughly $60,000/year, scoped to seniority and the complexity of the role.
+                        </p>
+                        <ul class="pricing-features">
+                            <li><i class="fas fa-check-circle"></i> 8+ years of senior domain expertise</li>
+                            <li><i class="fas fa-check-circle"></i> Functional leads, specialized engineers & multi-role pod deployments</li>
+                            <li><i class="fas fa-check-circle"></i> Custom security & hardware specifications</li>
+                            <li><i class="fas fa-check-circle"></i> Dedicated client operations director</li>
+                            <li><i class="fas fa-check-circle"></i> Multi-seat pod & managed unit discounting available</li>
+                            <li><i class="fas fa-check-circle"></i> Tailored service level agreements (SLAs)</li>
+                        </ul>
+                        <a href="book-a-discovery-call.html" class="btn btn-outline" style="text-align: center; width: 100%;">Contact Operators &rarr;</a>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- WHAT IS INCLUDED SECTION -->
+        <section class="section-padding" style="background-color: #FFFFFF;">
+            <div class="container">
+                <div class="text-center" style="max-width: 800px; margin: 0 auto 3.5rem auto;">
+                    <span class="section-label">All-Inclusive Standard</span>
+                    <h2 class="section-title">WHAT IS INCLUDED IN YOUR RETAINER</h2>
+                    <h3 class="section-subtitle">Zero Surprises, Total Operational Peace of Mind</h3>
+                </div>
+
+                <div class="grid grid-3">
+                    <div class="feature-card">
+                        <div class="feature-icon"><i class="fas fa-user-shield"></i></div>
+                        <h3>Global Legal & Tax Overhead</h3>
+                        <p>We assume all employer-of-record liabilities, international tax filings, labor law compliance, and statutory benefits handling.</p>
+                    </div>
+
+                    <div class="feature-card">
+                        <div class="feature-icon"><i class="fas fa-laptop-code"></i></div>
+                        <h3>Enterprise Hardware & Tools</h3>
+                        <p>High-performance workstations, secure VPN connections, backup power solutions, and operational infrastructure are fully provided.</p>
+                    </div>
+
+                    <div class="feature-card">
+                        <div class="feature-icon"><i class="fas fa-chart-line"></i></div>
+                        <h3>Operational Continuity</h3>
+                        <p>Continuous HR monitoring, backup talent sourcing, performance tracking, and local management oversight keep workflows seamless.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTRACTUAL FLEXIBILITY BANNER -->
+        <section class="section-padding" style="background-color: var(--color-bg-light);">
+            <div class="container">
+                <div class="split-section reverse">
+                    <div class="split-text">
+                        <span class="section-label">Risk-Free Agreements</span>
+                        <h2 class="section-title">Built for Modern Agility</h2>
+                        <h3 class="section-subtitle">No Multi-Year Lock-Ins or Punitive Offboarding Terms</h3>
+                        <p class="section-lead">
+                            We earn your business every month. Our standard agreements operate on flexible terms designed to scale up or down as your business needs shift.
+                        </p>
+                        <p style="color: var(--color-text-muted); line-height: 1.7;">
+                            With structured trial periods and simple notice terms, you retain total control over your organizational agility while scaling top-tier talent.
+                        </p>
+                    </div>
+
+                    <div class="split-media">
+                        <div class="media-frame">
+                            <img src="image19.jpeg" alt="Signed Agreement Document and Coffee Cup" class="framed-image">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FINAL CTA SECTION -->
+        <section class="banner-dark text-center" style="padding: 4.5rem 1.5rem;">
+            <div class="container" style="max-width: 800px;">
+                <h2 style="font-size: 2.5rem; font-weight: 800; color: #FFFFFF; margin-bottom: 1rem;">
+                    Ready to Scale Efficiently?
+                </h2>
+                <p style="color: #D1D5DB; font-size: 1.15rem; margin-bottom: 2rem; line-height: 1.6;">
+                    Schedule a discovery call to discuss your talent needs and receive an immediate custom investment proposal.
+                </p>
+                <a href="book-a-discovery-call.html" class="btn btn-primary" style="font-size: 1.1rem; padding: 0.9rem 2.2rem;">Book a Discovery Call</a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- WEBSITE FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="grid grid-4">
+                <div>
+                    <h4 class="footer-title">BUILD</h4>
+                    <ul class="footer-links">
+                        <li><a href="build-your-workforce.html">Build Your Workforce</a></li>
+                        <li><a href="how-we-work.html">How We Work</a></li>
+                        <li><a href="investment.html">Investment</a></li>
+                        <li><a href="build-your-workforce.html#hire-by-role">Hire by Role</a></li>
+                        <li><a href="build-your-workforce.html#by-function">Build by Function</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="footer-title">LEARN</h4>
+                    <ul class="footer-links">
+                        <li><a href="faq.html">FAQs</a></li>
+                        <li><a href="book-a-discovery-call.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="footer-title">COMPANY</h4>
+                    <ul class="footer-links">
+                        <li><a href="why-coreaugment.html">Why CoreAugment</a></li>
+                        <li><a href="why-we-exist.html">Why We Exist</a></li>
+                        <li><a href="leadership.html">Leadership</a></li>
+                        <li><a href="success-stories.html">Success Stories</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="footer-title">CONNECT</h4>
+                    <ul class="footer-links">
+                        <li><a href="book-a-discovery-call.html" style="color: var(--color-emerald); font-weight: 700;">Book a Discovery Call</a></li>
+                        <li><a href="book-a-discovery-call.html#booking-form">Email Us</a></li>
+                        <li><a href="https://www.linkedin.com/company/coreaugment/posts/?feedView=all" target="_blank">LinkedIn</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div>
+                    &copy; CoreAugment 2026. All rights reserved. Built by operators for growing businesses.
+                </div>
+                <div style="display: flex; gap: 1.5rem;">
+                    <a href="faq.html#privacy-policy">Privacy Policy</a>
+                    <a href="faq.html#terms-of-service">Terms</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
